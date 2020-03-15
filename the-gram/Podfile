@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+
+target 'The Gram' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  # use_frameworks!
+  use_modular_headers!
+  
+
+  # Pods for The Gram
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+
+  target 'The GramTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'The GramUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
