@@ -12,7 +12,7 @@ struct GramPost: View {
     var body: some View {
         VStack(spacing: 0.0) {
             GramPostHeader()
-            Image("turtlerock").resizable()
+            Image("appicon").resizable()
                 .frame(width:375.0,height:375)
                 .padding(.top, 5.0)
             GramPostButtons()
