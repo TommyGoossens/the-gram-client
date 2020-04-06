@@ -11,7 +11,7 @@ import SwiftUI
 struct CircularProfilePicture: View {
     let height:CGFloat
     var body: some View {
-        Image("turtlerock")
+        Image("appicon")
             .resizable()
             .frame(width: height, height: height)
             .clipShape(Circle())

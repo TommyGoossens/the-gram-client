@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SelectPicture: View {
     @State var showImagePicker: Bool = false
-    @Binding var image: Image?
+    @Binding var image: UIImage?
     
     var body: some View {
         VStack {
@@ -30,6 +30,6 @@ struct SelectPicture: View {
 
 struct SelectPicture_Previews: PreviewProvider {
     static var previews: some View {
-        SelectPicture(showImagePicker: false, image: .constant(Image("")))
+        SelectPicture(showImagePicker: false, image: .constant(UIImage(named: "appicon")))
     }
 }

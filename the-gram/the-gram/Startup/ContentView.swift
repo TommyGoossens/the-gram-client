@@ -18,9 +18,9 @@ struct ContentView: View {
             if (session.session != nil) {
                 Group {
                     
-                    if appState.showNewPostView && appState.selectedTab == .post {
-                        Text("").sheet(isPresented: self.$appState.showNewPostView, onDismiss: {
-                            self.appState.showNewPostView.toggle()
+                    if appState.isShowingNewPostView && appState.selectedTab == .post {
+                        Text("").sheet(isPresented: self.$appState.isShowingNewPostView, onDismiss: {
+                            self.appState.isShowingNewPostView.toggle()
                             self.appState.selectedTab = .none
                         }, content: {
                             NewPostView()
@@ -44,7 +44,7 @@ struct ContentView: View {
                                         Text("Search")
                                     }
                             }.tag(GramViewTabs.search)
-                            NewPostView()
+                            Text("Post")
                                 .tabItem{
                                     VStack{
                                         Image(systemName: "camera")
@@ -72,7 +72,7 @@ struct ContentView: View {
                     
                 }
             }
-                
+
             else{
                 AuthenticationView()
             }
