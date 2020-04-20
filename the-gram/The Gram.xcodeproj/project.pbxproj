@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D13B6CB242B8EAE000B1B0A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D13B6CA242B8EAE000B1B0A /* PostService.swift */; };
+		4791AB8F856F46CDE5F7A6A1 /* Pods_The_GramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5602CB5437E182666DD32C /* Pods_The_GramUITests.framework */; };
+		4D177107468757F87E0E0FC7 /* Pods_The_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F03C933A9E97853A375F0CB3 /* Pods_The_Gram.framework */; };
 		7D221ACC241CE90E00C4208F /* PrimitiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D221ACB241CE90E00C4208F /* PrimitiveButton.swift */; };
 		7D34D7B12417BA9D0031A974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D34D7B02417BA9D0031A974 /* AppDelegate.swift */; };
 		7D34D7B32417BA9D0031A974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D34D7B22417BA9D0031A974 /* SceneDelegate.swift */; };
@@ -40,16 +41,13 @@
 		7D5154FD242271240047CFDA /* PicturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FC242271240047CFDA /* PicturePreview.swift */; };
 		7D5154FF2422740E0047CFDA /* PostDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FE2422740E0047CFDA /* PostDescription.swift */; };
 		7D585907241CDD550099CF0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D585906241CDD550099CF0F /* GoogleService-Info.plist */; };
-		7D8A54DC24290AF90068CB95 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A54DB24290AF90068CB95 /* FirebaseStorageService.swift */; };
 		7D9B7E52242500C600FE3C5C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B7E51242500C600FE3C5C /* AppState.swift */; };
 		7D9B7E542425015200FE3C5C /* GramViewTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B7E532425015200FE3C5C /* GramViewTabs.swift */; };
 		7DA97CBB241E8CD200ED46C1 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA97CBA241E8CD200ED46C1 /* NewPostView.swift */; };
 		7DABC0212428D8DB007E73C6 /* NewGramPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABC0202428D8DB007E73C6 /* NewGramPost.swift */; };
 		7DABC0232428E2FF007E73C6 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABC0222428E2FE007E73C6 /* RestService.swift */; };
 		7DF4C3AA2424CD3900BA0FCF /* MultiLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C3A92424CD3900BA0FCF /* MultiLineTextView.swift */; };
-		9693C94E0C6C84E9CF53C4B9 /* Pods_The_GramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F111862B90F01549E11C0B26 /* Pods_The_GramTests.framework */; };
-		A134253B923D00E9D80AC2BE /* Pods_The_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAFC65089979B3995DC049A /* Pods_The_Gram.framework */; };
-		C38B647F8222B6C4D7C5FAE0 /* Pods_The_GramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD21A45F7622180BE22ACEF8 /* Pods_The_GramUITests.framework */; };
+		94E7E972CB576747C6A7DAA6 /* Pods_The_GramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6500978DA83E13E4806FB72 /* Pods_The_GramTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51D8290F8DEFD234D5553214 /* Pods-The GramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramTests.release.xcconfig"; path = "Target Support Files/Pods-The GramTests/Pods-The GramTests.release.xcconfig"; sourceTree = "<group>"; };
-		5DAFC65089979B3995DC049A /* Pods_The_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77FE44FBD5EFA9384A9D7D93 /* Pods-The GramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramTests.debug.xcconfig"; path = "Target Support Files/Pods-The GramTests/Pods-The GramTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7D13B6CA242B8EAE000B1B0A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		13698B71A53420DF2A9AD180 /* Pods-The GramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramUITests.release.xcconfig"; path = "Target Support Files/Pods-The GramUITests/Pods-The GramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2D5602CB5437E182666DD32C /* Pods_The_GramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_GramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EE73C5D00D36B45EA5F6D45 /* Pods-The Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Gram.debug.xcconfig"; path = "Target Support Files/Pods-The Gram/Pods-The Gram.debug.xcconfig"; sourceTree = "<group>"; };
 		7D221ACB241CE90E00C4208F /* PrimitiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveButton.swift; sourceTree = "<group>"; };
 		7D34D7AD2417BA9D0031A974 /* The Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Gram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34D7B02417BA9D0031A974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +109,6 @@
 		7D5154FC242271240047CFDA /* PicturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePreview.swift; sourceTree = "<group>"; };
 		7D5154FE2422740E0047CFDA /* PostDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescription.swift; sourceTree = "<group>"; };
 		7D585906241CDD550099CF0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7D8A54DB24290AF90068CB95 /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
 		7D9B7E51242500C600FE3C5C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7D9B7E532425015200FE3C5C /* GramViewTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GramViewTabs.swift; sourceTree = "<group>"; };
 		7DA97CBA241E8CD200ED46C1 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -120,12 +116,12 @@
 		7DABC0202428D8DB007E73C6 /* NewGramPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGramPost.swift; sourceTree = "<group>"; };
 		7DABC0222428E2FE007E73C6 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		7DF4C3A92424CD3900BA0FCF /* MultiLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextView.swift; sourceTree = "<group>"; };
-		8F8265E8311CE008598494AB /* Pods-The Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Gram.debug.xcconfig"; path = "Target Support Files/Pods-The Gram/Pods-The Gram.debug.xcconfig"; sourceTree = "<group>"; };
-		A0CB2BEDE6D983404CBCE514 /* Pods-The GramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramUITests.release.xcconfig"; path = "Target Support Files/Pods-The GramUITests/Pods-The GramUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CD21A45F7622180BE22ACEF8 /* Pods_The_GramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_GramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E67FEF5B6714A403DEBA735B /* Pods-The GramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramUITests.debug.xcconfig"; path = "Target Support Files/Pods-The GramUITests/Pods-The GramUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F111862B90F01549E11C0B26 /* Pods_The_GramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_GramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE15CA3489C3ACF52610CC25 /* Pods-The Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Gram.release.xcconfig"; path = "Target Support Files/Pods-The Gram/Pods-The Gram.release.xcconfig"; sourceTree = "<group>"; };
+		9C5C322D14C014033BE8E654 /* Pods-The GramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramUITests.debug.xcconfig"; path = "Target Support Files/Pods-The GramUITests/Pods-The GramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAC4F3DB206759FCB39BACC9 /* Pods-The Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Gram.release.xcconfig"; path = "Target Support Files/Pods-The Gram/Pods-The Gram.release.xcconfig"; sourceTree = "<group>"; };
+		BE1148BA5CECAF15411DC025 /* Pods-The GramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramTests.release.xcconfig"; path = "Target Support Files/Pods-The GramTests/Pods-The GramTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6500978DA83E13E4806FB72 /* Pods_The_GramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_GramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03C933A9E97853A375F0CB3 /* Pods_The_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83D2FB9740490CF842AFBCD /* Pods-The GramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The GramTests.debug.xcconfig"; path = "Target Support Files/Pods-The GramTests/Pods-The GramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A134253B923D00E9D80AC2BE /* Pods_The_Gram.framework in Frameworks */,
+				4D177107468757F87E0E0FC7 /* Pods_The_Gram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9693C94E0C6C84E9CF53C4B9 /* Pods_The_GramTests.framework in Frameworks */,
+				94E7E972CB576747C6A7DAA6 /* Pods_The_GramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38B647F8222B6C4D7C5FAE0 /* Pods_The_GramUITests.framework in Frameworks */,
+				4791AB8F856F46CDE5F7A6A1 /* Pods_The_GramUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,9 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				7DAB8B1F241CE52D005CCF07 /* GTMSessionFetcher.framework */,
-				5DAFC65089979B3995DC049A /* Pods_The_Gram.framework */,
-				F111862B90F01549E11C0B26 /* Pods_The_GramTests.framework */,
-				CD21A45F7622180BE22ACEF8 /* Pods_The_GramUITests.framework */,
+				F03C933A9E97853A375F0CB3 /* Pods_The_Gram.framework */,
+				E6500978DA83E13E4806FB72 /* Pods_The_GramTests.framework */,
+				2D5602CB5437E182666DD32C /* Pods_The_GramUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,8 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				7DABC0222428E2FE007E73C6 /* RestService.swift */,
-				7D8A54DB24290AF90068CB95 /* FirebaseStorageService.swift */,
-				7D13B6CA242B8EAE000B1B0A /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -336,12 +330,12 @@
 		9B2FBA6D6AB7D29E7A8641FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8F8265E8311CE008598494AB /* Pods-The Gram.debug.xcconfig */,
-				FE15CA3489C3ACF52610CC25 /* Pods-The Gram.release.xcconfig */,
-				77FE44FBD5EFA9384A9D7D93 /* Pods-The GramTests.debug.xcconfig */,
-				51D8290F8DEFD234D5553214 /* Pods-The GramTests.release.xcconfig */,
-				E67FEF5B6714A403DEBA735B /* Pods-The GramUITests.debug.xcconfig */,
-				A0CB2BEDE6D983404CBCE514 /* Pods-The GramUITests.release.xcconfig */,
+				4EE73C5D00D36B45EA5F6D45 /* Pods-The Gram.debug.xcconfig */,
+				AAC4F3DB206759FCB39BACC9 /* Pods-The Gram.release.xcconfig */,
+				F83D2FB9740490CF842AFBCD /* Pods-The GramTests.debug.xcconfig */,
+				BE1148BA5CECAF15411DC025 /* Pods-The GramTests.release.xcconfig */,
+				9C5C322D14C014033BE8E654 /* Pods-The GramUITests.debug.xcconfig */,
+				13698B71A53420DF2A9AD180 /* Pods-The GramUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -353,11 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D34D7D72417BA9F0031A974 /* Build configuration list for PBXNativeTarget "The Gram" */;
 			buildPhases = (
-				99EFD1B96D85EC5A5C13CE0A /* [CP] Check Pods Manifest.lock */,
+				47E1C0665FE84B0024F05C23 /* [CP] Check Pods Manifest.lock */,
 				7D34D7A92417BA9D0031A974 /* Sources */,
 				7D34D7AA2417BA9D0031A974 /* Frameworks */,
 				7D34D7AB2417BA9D0031A974 /* Resources */,
-				EBF565098F5A4F5FD11CE153 /* [CP] Embed Pods Frameworks */,
+				D2A059846A8C884304367CA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,7 +366,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D34D7DA2417BA9F0031A974 /* Build configuration list for PBXNativeTarget "The GramTests" */;
 			buildPhases = (
-				2E0F997E508FA901C203FA4D /* [CP] Check Pods Manifest.lock */,
+				B03732C723E55588528AE9E7 /* [CP] Check Pods Manifest.lock */,
 				7D34D7BF2417BA9E0031A974 /* Sources */,
 				7D34D7C02417BA9E0031A974 /* Frameworks */,
 				7D34D7C12417BA9E0031A974 /* Resources */,
@@ -391,7 +385,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D34D7DD2417BA9F0031A974 /* Build configuration list for PBXNativeTarget "The GramUITests" */;
 			buildPhases = (
-				9760307E3FA1EB375BD49420 /* [CP] Check Pods Manifest.lock */,
+				546D7A399D8ADB564C3F6BF1 /* [CP] Check Pods Manifest.lock */,
 				7D34D7CA2417BA9F0031A974 /* Sources */,
 				7D34D7CB2417BA9F0031A974 /* Frameworks */,
 				7D34D7CC2417BA9F0031A974 /* Resources */,
@@ -478,51 +472,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E0F997E508FA901C203FA4D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-The GramTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9760307E3FA1EB375BD49420 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-The GramUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99EFD1B96D85EC5A5C13CE0A /* [CP] Check Pods Manifest.lock */ = {
+		47E1C0665FE84B0024F05C23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,7 +494,51 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EBF565098F5A4F5FD11CE153 /* [CP] Embed Pods Frameworks */ = {
+		546D7A399D8ADB564C3F6BF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The GramUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B03732C723E55588528AE9E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The GramTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2A059846A8C884304367CA5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -581,7 +575,6 @@
 				7D34D7E52417C0490031A974 /* HomeView.swift in Sources */,
 				7D5154F8242265290047CFDA /* PhotoCaptureView.swift in Sources */,
 				7DA97CBB241E8CD200ED46C1 /* NewPostView.swift in Sources */,
-				7D8A54DC24290AF90068CB95 /* FirebaseStorageService.swift in Sources */,
 				7D34D7E72417C06B0031A974 /* ProfileView.swift in Sources */,
 				7D34D7B32417BA9D0031A974 /* SceneDelegate.swift in Sources */,
 				7D5154F6242261CE0047CFDA /* ImagePicker.swift in Sources */,
@@ -593,7 +586,6 @@
 				7D9B7E542425015200FE3C5C /* GramViewTabs.swift in Sources */,
 				7D34D7F62418EEC80031A974 /* GramPostLikes.swift in Sources */,
 				7D5154FD242271240047CFDA /* PicturePreview.swift in Sources */,
-				7D13B6CB242B8EAE000B1B0A /* PostService.swift in Sources */,
 				7D38C005241D167C0079F76E /* AuthenticationView.swift in Sources */,
 				7D34D7FA2418FD3D0031A974 /* LoginView.swift in Sources */,
 				7DABC0212428D8DB007E73C6 /* NewGramPost.swift in Sources */,
@@ -764,7 +756,7 @@
 		};
 		7D34D7D82417BA9F0031A974 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F8265E8311CE008598494AB /* Pods-The Gram.debug.xcconfig */;
+			baseConfigurationReference = 4EE73C5D00D36B45EA5F6D45 /* Pods-The Gram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -785,7 +777,7 @@
 		};
 		7D34D7D92417BA9F0031A974 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE15CA3489C3ACF52610CC25 /* Pods-The Gram.release.xcconfig */;
+			baseConfigurationReference = AAC4F3DB206759FCB39BACC9 /* Pods-The Gram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -806,7 +798,7 @@
 		};
 		7D34D7DB2417BA9F0031A974 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77FE44FBD5EFA9384A9D7D93 /* Pods-The GramTests.debug.xcconfig */;
+			baseConfigurationReference = F83D2FB9740490CF842AFBCD /* Pods-The GramTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -829,7 +821,7 @@
 		};
 		7D34D7DC2417BA9F0031A974 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51D8290F8DEFD234D5553214 /* Pods-The GramTests.release.xcconfig */;
+			baseConfigurationReference = BE1148BA5CECAF15411DC025 /* Pods-The GramTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -852,7 +844,7 @@
 		};
 		7D34D7DE2417BA9F0031A974 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E67FEF5B6714A403DEBA735B /* Pods-The GramUITests.debug.xcconfig */;
+			baseConfigurationReference = 9C5C322D14C014033BE8E654 /* Pods-The GramUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -873,7 +865,7 @@
 		};
 		7D34D7DF2417BA9F0031A974 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0CB2BEDE6D983404CBCE514 /* Pods-The GramUITests.release.xcconfig */;
+			baseConfigurationReference = 13698B71A53420DF2A9AD180 /* Pods-The GramUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

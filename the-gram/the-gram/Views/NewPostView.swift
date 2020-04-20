@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import FirebaseStorage
 struct NewPostView: View {
     let rest = RestService()
     
@@ -47,14 +46,8 @@ struct NewPostView: View {
     
     func postImage(){
         if(self.selectedImage != nil){
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            let post: NewGramPost = NewGramPost(Image: self.selectedImage!, Description: self.description, DatePosted: df.string(from: Date()), UserUID: "tommygoossens123")
-            print("Making request")
-//            PostService.create(for: self.selectedImage!)
+            let post: NewGramPost = NewGramPost(Image: self.selectedImage!, Description: self.description)
             self.rest.uploadImage(newPost: post)
-//            self.rest.getRequest(endpoint: "post/getspecificpost")
-            
         }
     }
 }

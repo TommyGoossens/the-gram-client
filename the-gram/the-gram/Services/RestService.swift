@@ -28,27 +28,29 @@ class RestService {
     }
     
     func uploadImage(newPost: NewGramPost){
-        let tempImageName: String = "tommy-23581"
-    
-        
+        var headers = HTTPHeaders()
         var parameters = [String:String]()
-        parameters = ["description":newPost.Description,
-                      "datePosted":newPost.DatePosted,
-                      "userUID":newPost.UserUID]
-    
         let imgData = newPost.Image.jpegData(compressionQuality: 0.2)!
-        session.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imgData, withName: "image", fileName: "\(tempImageName).jpg", mimeType: "multipart/form-data")
-            for (key, value) in parameters {
-                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-            }
-        }, to: api+"post/test", method: .post).response{(data) in print(data)}
         
+        SessionStorage.getToken() { (token,uid) in
+            parameters = ["description":newPost.Description]
+            headers.add(HTTPHeader.authorization(bearerToken: token))
+            self.session.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(imgData, withName: "image", fileName: "\(uid).jpg", mimeType: "multipart/form-data")
+                for (key, value) in parameters {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+            }, to: "\(self.api)post/post", method: .post, headers: headers).response{(data) in print(data)}
+        }
     }
     
     func postRequest(endpoint: String, body: Data){
-        // let request = session.upload(body, to: api+endpoint)
+        SessionStorage.getToken() { (token,uid) in
+            print(token)
+            print(uid)
+            // let request = session.upload(body, to: api+endpoint)
+        }
+        
         
     }
-    
 }
