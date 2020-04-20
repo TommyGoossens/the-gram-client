@@ -45,6 +45,19 @@ class SessionStorage: ObservableObject {
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
     
+    typealias CompletionHandler = (_ token:String,_ useruid:String) -> Void
+    static func getToken(completionHandler: @escaping CompletionHandler){
+        let currentUser = Auth.auth().currentUser
+        currentUser?.getIDTokenForcingRefresh(true){ idToken, error in
+            if let error = error {
+                print(error)
+            }
+            if let idToken = idToken{
+                completionHandler(idToken,currentUser!.uid)
+            }
+        }
+    }
+    
     func signOut() -> Bool {
         do{
             try Auth.auth().signOut()
