@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
-
+plugin 'cocoapods-git-tarball'
 target 'The Gram' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -11,10 +11,6 @@ target 'The Gram' do
   # Pods for The Gram
   pod 'Firebase'
   pod 'Firebase/Auth'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Database'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Storage'
   target 'The GramTests' do
     inherit! :search_paths
     # Pods for testing
