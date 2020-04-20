@@ -13,6 +13,10 @@ struct ContentView: View {
     @EnvironmentObject var appState: Appstate
     
     @EnvironmentObject var session: SessionStorage
+    
+    func testFunction() {
+        print("Expected behaviour worked")
+    }
     var body: some View {
         Group {
             if (session.session != nil) {
@@ -23,7 +27,7 @@ struct ContentView: View {
                             self.appState.isShowingNewPostView.toggle()
                             self.appState.selectedTab = .none
                         }, content: {
-                            NewPostView()
+                            NewPostView(isDisplaying: self.$appState.isShowingNewPostView)
                         })
                     }else{
                         TabView(selection: self.$appState.selectedTab){

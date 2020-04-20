@@ -27,12 +27,12 @@ class RestService {
         }
     }
     
-    func uploadImage(newPost: NewGramPost){
+    func uploadImage(newPost: NewGramPost, success: @escaping (Bool) -> Void){
         var headers = HTTPHeaders()
         var parameters = [String:String]()
         let imgData = newPost.Image.jpegData(compressionQuality: 0.2)!
-        
-        SessionStorage.getToken() { (token,uid) in
+    
+        SessionStorage.getToken(){ (token,uid) in
             parameters = ["description":newPost.Description]
             headers.add(HTTPHeader.authorization(bearerToken: token))
             self.session.upload(multipartFormData: { multipartFormData in
@@ -40,7 +40,13 @@ class RestService {
                 for (key, value) in parameters {
                     multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                 }
-            }, to: "\(self.api)post/post", method: .post, headers: headers).response{(data) in print(data)}
+            }, to: "\(self.api)post/post", method: .post, headers: headers).response{(data) in
+                if data.response?.statusCode == 201 {
+                    success(true)
+                } else{
+                    success(false)
+                }
+            }
         }
     }
     

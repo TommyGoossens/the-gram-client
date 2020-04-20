@@ -12,6 +12,4 @@ import SwiftUI
 struct NewGramPost {
     var Image: UIImage
     var Description: String
-    var DatePosted: String
-    var UserUID: String
 }

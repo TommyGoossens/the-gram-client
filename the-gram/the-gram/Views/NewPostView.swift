@@ -13,7 +13,7 @@ struct NewPostView: View {
     @State var selectedImage: UIImage? = nil
     @State var description: String = ""
     @State private var showImagePicker: Bool = false
-    
+    @Binding var isDisplaying: Bool
     
     var body: some View {
         KeyboardHost{
@@ -47,7 +47,11 @@ struct NewPostView: View {
     func postImage(){
         if(self.selectedImage != nil){
             let post: NewGramPost = NewGramPost(Image: self.selectedImage!, Description: self.description)
-            self.rest.uploadImage(newPost: post)
+            self.rest.uploadImage(newPost: post) { success in
+                if success{ print("post uploaded")
+                    self.isDisplaying.toggle()
+                }
+            }
         }
     }
 }
@@ -55,7 +59,7 @@ struct NewPostView: View {
 #if DEBUG
 struct NewPostView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostView()
+        NewPostView(isDisplaying: .constant(false))
     }
 }
 #endif
