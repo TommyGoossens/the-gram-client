@@ -9,17 +9,29 @@
 import SwiftUI
 
 struct ProfileView: View {
+    let rest = RestService()
     @State var data = fetchUserPosts()
-    @State var profile:GramProfile = fetchUserProfile()
+    @State var profile:UserProfile? = nil
     @State var Grid: [Int] = []
+    
     var body: some View {
-        VStack() {
+        VStack{
+        
             ProfileInformationHeader(profile: self.$profile)
-            ProfileViewButtons(selectedUserId: self.$profile.userId)
+//
+//
+            ProfileViewButtons(user: self.$profile)
+//
             ProfilePostGrid(data:self.$data, grid: self.$Grid)
+            
             
         }.onAppear{
             self.generateGrid()
+            self.rest.getRequest(endpoint: "profile/UBh7cektzYhSu6s4s6IdEEsNfz63", of: UserProfile.self){data in
+
+                self.profile = data
+                print(self.profile!.email)
+            }
         }
         .padding(0.0)
         
@@ -38,11 +50,12 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(profile: UserProfile(userId: "hans", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "Tommy.Goossens", profilePictureURL: "empty", followers: ["henk"],following: ["piet"]))
     }
 }
 
 func fetchUserProfile() -> GramProfile{
+    
     return GramProfile(userId:"adolf",firstName: "Tommy", surName: "Goossens", email: "tommygoossens@ziggo.nl", followers: 911, following: 2977)
 }
 
@@ -65,10 +78,20 @@ struct GramProfile{
     
 }
 
+//let imageNames = [
+//    "appicon",
+//    "911",
+//    "hitler",
+//    "chingchong",
+//    "rutte"
+//]
+
 let imageNames = [
     "appicon",
-    "911",
-    "hitler",
-    "chingchong",
-    "rutte"
+    "mountain1",
+    "mountain2",
+    "mountain3",
+    "nature1",
+    "nature2",
+    "nature3"
 ]
