@@ -9,19 +9,30 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject var session: SessionStorage
-    
+    @State var data = fetchUserPosts()
+    @State var profile:GramProfile = fetchUserProfile()
+    @State var Grid: [Int] = []
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Profile view"/*@END_MENU_TOKEN@*/)
-            Button(action:{
-                self.session.signOut()
-            }){
-                Text("Logout")
-            }.buttonStyle(PrimitiveButton(isCancelButton: true))
+        VStack() {
+            ProfileInformationHeader(profile: self.$profile)
+            ProfileViewButtons(selectedUserId: self.$profile.userId)
+            ProfilePostGrid(data:self.$data, grid: self.$Grid)
+            
+        }.onAppear{
+            self.generateGrid()
         }
+        .padding(0.0)
         
         
+    }
+    
+    func generateGrid() {
+        for i in stride(from: 0, to: self.data.count, by: 3){
+            if i != self.data.count{
+                self.Grid.append(i)
+            }
+            
+        }
     }
 }
 
@@ -30,3 +41,34 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
+
+func fetchUserProfile() -> GramProfile{
+    return GramProfile(userId:"adolf",firstName: "Tommy", surName: "Goossens", email: "tommygoossens@ziggo.nl", followers: 911, following: 2977)
+}
+
+func fetchUserPosts() -> [PostPreview]{
+    var data:[PostPreview] = []
+    for _ in stride(from: 0, to: 34, by: 1){
+        let randomInt = Int.random(in: 0...imageNames.count-1)
+        data.append(PostPreview(imageURL: imageNames[randomInt]))
+    }
+    return data
+}
+
+struct GramProfile{
+    var userId:String
+    let firstName: String
+    let surName:String
+    let email:String
+    let followers:Int
+    let following:Int
+    
+}
+
+let imageNames = [
+    "appicon",
+    "911",
+    "hitler",
+    "chingchong",
+    "rutte"
+]

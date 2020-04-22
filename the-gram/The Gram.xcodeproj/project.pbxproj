@@ -41,6 +41,10 @@
 		7D5154FD242271240047CFDA /* PicturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FC242271240047CFDA /* PicturePreview.swift */; };
 		7D5154FF2422740E0047CFDA /* PostDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FE2422740E0047CFDA /* PostDescription.swift */; };
 		7D585907241CDD550099CF0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D585906241CDD550099CF0F /* GoogleService-Info.plist */; };
+		7D70F655244E178300FBD4AC /* ProfileInformationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F654244E178300FBD4AC /* ProfileInformationHeader.swift */; };
+		7D70F657244E1A8900FBD4AC /* ProfilePostGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */; };
+		7D70F659244E1AA900FBD4AC /* PostThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */; };
+		7D912CD124503BB000D856B8 /* ProfileViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D912CD024503BB000D856B8 /* ProfileViewButtons.swift */; };
 		7D9B7E52242500C600FE3C5C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B7E51242500C600FE3C5C /* AppState.swift */; };
 		7D9B7E542425015200FE3C5C /* GramViewTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B7E532425015200FE3C5C /* GramViewTabs.swift */; };
 		7DA97CBB241E8CD200ED46C1 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA97CBA241E8CD200ED46C1 /* NewPostView.swift */; };
@@ -109,6 +113,10 @@
 		7D5154FC242271240047CFDA /* PicturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePreview.swift; sourceTree = "<group>"; };
 		7D5154FE2422740E0047CFDA /* PostDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescription.swift; sourceTree = "<group>"; };
 		7D585906241CDD550099CF0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D70F654244E178300FBD4AC /* ProfileInformationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationHeader.swift; sourceTree = "<group>"; };
+		7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostGrid.swift; sourceTree = "<group>"; };
+		7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostThumbnail.swift; sourceTree = "<group>"; };
+		7D912CD024503BB000D856B8 /* ProfileViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewButtons.swift; sourceTree = "<group>"; };
 		7D9B7E51242500C600FE3C5C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7D9B7E532425015200FE3C5C /* GramViewTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GramViewTabs.swift; sourceTree = "<group>"; };
 		7DA97CBA241E8CD200ED46C1 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -265,6 +273,7 @@
 		7D34D7E32417BFAA0031A974 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7D70F653244E175D00FBD4AC /* Profile */,
 				7DF4C3A92424CD3900BA0FCF /* MultiLineTextView.swift */,
 				7D5154F924226E810047CFDA /* NewPost */,
 				7D34D7F22418EADA0031A974 /* GramPost */,
@@ -307,6 +316,17 @@
 				7D5154FE2422740E0047CFDA /* PostDescription.swift */,
 			);
 			path = NewPost;
+			sourceTree = "<group>";
+		};
+		7D70F653244E175D00FBD4AC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7D70F654244E178300FBD4AC /* ProfileInformationHeader.swift */,
+				7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */,
+				7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */,
+				7D912CD024503BB000D856B8 /* ProfileViewButtons.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7D8A54DA24290AE20068CB95 /* Services */ = {
@@ -572,9 +592,11 @@
 				7D34D7F82418F4E60031A974 /* Header.swift in Sources */,
 				7D38C001241CFEC50079F76E /* KeyboardHost.swift in Sources */,
 				7D38C003241D0C460079F76E /* SessionStorage.swift in Sources */,
+				7D912CD124503BB000D856B8 /* ProfileViewButtons.swift in Sources */,
 				7D34D7E52417C0490031A974 /* HomeView.swift in Sources */,
 				7D5154F8242265290047CFDA /* PhotoCaptureView.swift in Sources */,
 				7DA97CBB241E8CD200ED46C1 /* NewPostView.swift in Sources */,
+				7D70F655244E178300FBD4AC /* ProfileInformationHeader.swift in Sources */,
 				7D34D7E72417C06B0031A974 /* ProfileView.swift in Sources */,
 				7D34D7B32417BA9D0031A974 /* SceneDelegate.swift in Sources */,
 				7D5154F6242261CE0047CFDA /* ImagePicker.swift in Sources */,
@@ -582,6 +604,7 @@
 				7D34D8002418FD730031A974 /* SettingsView.swift in Sources */,
 				7DF4C3AA2424CD3900BA0FCF /* MultiLineTextView.swift in Sources */,
 				7D34D7EF2418DF9C0031A974 /* GramPostHeader.swift in Sources */,
+				7D70F659244E1AA900FBD4AC /* PostThumbnail.swift in Sources */,
 				7D34D7FE2418FD640031A974 /* SearchView.swift in Sources */,
 				7D9B7E542425015200FE3C5C /* GramViewTabs.swift in Sources */,
 				7D34D7F62418EEC80031A974 /* GramPostLikes.swift in Sources */,
@@ -590,6 +613,7 @@
 				7D34D7FA2418FD3D0031A974 /* LoginView.swift in Sources */,
 				7DABC0212428D8DB007E73C6 /* NewGramPost.swift in Sources */,
 				7DABC0232428E2FF007E73C6 /* RestService.swift in Sources */,
+				7D70F657244E1A8900FBD4AC /* ProfilePostGrid.swift in Sources */,
 				7D9B7E52242500C600FE3C5C /* AppState.swift in Sources */,
 				7D5154FF2422740E0047CFDA /* PostDescription.swift in Sources */,
 				7D34D7ED2417C4480031A974 /* GramPostButtons.swift in Sources */,
@@ -771,7 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "goossens.tommy.the-gram";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -792,7 +816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "goossens.tommy.the-gram";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
