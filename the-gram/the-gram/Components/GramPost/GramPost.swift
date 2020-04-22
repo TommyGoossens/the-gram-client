@@ -12,9 +12,8 @@ struct GramPost: View {
     var body: some View {
         VStack(spacing: 0.0) {
             GramPostHeader()
-            Image("appicon").resizable()
-                .frame(width:375.0,height:375)
-                .padding(.top, 5.0)
+            Image(getRandomImage()).resizable()
+                .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
             GramPostButtons()
                 .padding(.top, 5.0)
             GramPostLikes()
@@ -29,4 +28,8 @@ struct GramPost_Previews: PreviewProvider {
     static var previews: some View {
         GramPost()
     }
+}
+
+func getRandomImage() -> String{
+    return imageNames[Int.random(in: 0...imageNames.count-1)]
 }

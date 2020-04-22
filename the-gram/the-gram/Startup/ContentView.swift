@@ -10,13 +10,9 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {    
-    @EnvironmentObject var appState: Appstate
-    
+    @EnvironmentObject var appState: Appstate    
     @EnvironmentObject var session: SessionStorage
-    
-    func testFunction() {
-        print("Expected behaviour worked")
-    }
+
     var body: some View {
         Group {
             if (session.session != nil) {
