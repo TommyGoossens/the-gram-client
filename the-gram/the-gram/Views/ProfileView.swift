@@ -16,16 +16,11 @@ struct ProfileView: View {
     
     var body: some View {
         VStack{
-        
             ProfileInformationHeader(profile: self.$profile)
-//
-//
             ProfileViewButtons(user: self.$profile)
-//
             ProfilePostGrid(data:self.$data, grid: self.$Grid)
-            
-            
         }.onAppear{
+            
             self.generateGrid()
             self.rest.getRequest(endpoint: "profile/UBh7cektzYhSu6s4s6IdEEsNfz63", of: UserProfile.self){data in
 
@@ -39,6 +34,7 @@ struct ProfileView: View {
     }
     
     func generateGrid() {
+        self.Grid = []
         for i in stride(from: 0, to: self.data.count, by: 3){
             if i != self.data.count{
                 self.Grid.append(i)

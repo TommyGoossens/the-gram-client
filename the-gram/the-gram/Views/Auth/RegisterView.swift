@@ -18,6 +18,7 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             TextField("Email", text: self.$email)
+                .autocapitalization(.none)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.emailAddress)
             SecureField("Password", text: self.$password)

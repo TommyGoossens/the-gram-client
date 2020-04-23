@@ -18,7 +18,7 @@ struct ProfileViewButtons: View {
                     HStack{
                         Spacer()
                         Button(action:{
-                            print("Logging out")
+                            self.session.signOut()
                         }, label: {
                             Text("Logout")
                                 .font(.callout)

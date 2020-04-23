@@ -12,11 +12,11 @@ struct GramPostCommentsPreview: View {
     var body: some View {
         VStack {
             HStack {
-                Text("tommygoossens")
+                Text("tommy.goossens")
                     .font(.callout)
                     .fontWeight(.medium)
                     .padding(.leading, 10.0)
-                Text("Gutentag mein freunden!")
+                Text("Look at the view!")
                     .font(.callout)
                     .fontWeight(.regular)
                 Spacer()
