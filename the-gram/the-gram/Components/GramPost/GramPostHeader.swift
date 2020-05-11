@@ -13,6 +13,7 @@ struct GramPostHeader: View {
         HStack {
             CircularProfilePicture(height: 50.0)
             Text("Tommy Goossens")
+                .font(.body)
             Spacer()
         }
         .padding(.leading, 5.0)

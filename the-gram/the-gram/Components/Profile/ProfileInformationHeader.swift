@@ -9,45 +9,48 @@
 import SwiftUI
 
 struct ProfileInformationHeader: View {
-    @Binding var profile:GramProfile
+    @Binding var profile:UserProfile?
     var body: some View {
         VStack {
-            VStack {
-                HStack {
-                    Text(profile.firstName)
-                        .font(.body)
-                    Text(profile.surName)
+            if profile != nil {
+        
+                VStack {
+                    HStack {
+                        Text("\(self.profile?.firstName ?? "Firstname")")
+                            .font(.body)
+                        Text("\(profile?.lastName ?? "Lastname")")
+                            .font(.body)
+                    }
+                    Text("\(profile?.email ?? "Email")")
                         .font(.body)
                 }
-                Text(profile.email)
-                         .font(.body)
-            }
-            HStack {
-                CircularProfilePicture(height: 100)
-                VStack(alignment: .leading){
-                    
-                    HStack(alignment: .center) {
-                        VStack{
-                            Text("5").font(.callout)
-                            Text("posts")
-                                .font(.callout)
-                        }
-                        Spacer()
-                        VStack{
-                            Text("\(profile.followers)")
-                            .font(.callout)
-                            Text("Followers")
-                            .font(.callout)
-                        }
-                        Spacer()
-                        VStack{
-                            Text("\(profile.following)").font(.callout)
-                            Text("Following")
-                            .font(.callout)
+                HStack {
+                    CircularProfilePicture(height: 100)
+                    VStack(alignment: .leading){
+                        
+                        HStack(alignment: .center) {
+                            VStack{
+                                Text("5").font(.callout)
+                                Text("posts")
+                                    .font(.callout)
+                            }
+                            Spacer()
+                            VStack{
+                                Text(profile!.followers.count.description)
+                                    .font(.callout)
+                                Text("Followers")
+                                    .font(.callout)
+                            }
+                            Spacer()
+                            VStack{
+                                Text(profile!.following.count.description).font(.callout)
+                                Text("Following")
+                                    .font(.callout)
+                            }
                         }
                     }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .padding(.horizontal, 10.0)
@@ -56,6 +59,6 @@ struct ProfileInformationHeader: View {
 
 struct ProfileInformationHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationHeader(profile: .constant(GramProfile(userId: "Adolf", firstName: "Tommy", surName: "Goossens", email: "tommygoossens@ziggo.nl", followers: 911, following: 2977)))
+        ProfileInformationHeader(profile: .constant(UserProfile(userId: "tommy", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: [])))
     }
 }

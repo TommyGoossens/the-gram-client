@@ -9,48 +9,54 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var data = fetchUserPosts()
-    @State var profile:GramProfile = fetchUserProfile()
+    let rest = RestService()
+    @State var profile:UserProfile? = nil
+    @State var posts:[ProfilePostPreview] = []
     @State var Grid: [Int] = []
+    
     var body: some View {
-        VStack() {
+        VStack{
             ProfileInformationHeader(profile: self.$profile)
-            ProfileViewButtons(selectedUserId: self.$profile.userId)
-            ProfilePostGrid(data:self.$data, grid: self.$Grid)
-            
+            ProfileViewButtons(user: self.$profile)
+            ProfilePostGrid(data: self.$posts, grid: self.$Grid)
         }.onAppear{
-            self.generateGrid()
+            self.fetchUserProfile()
         }
         .padding(0.0)
         
         
     }
-    
     func generateGrid() {
-        for i in stride(from: 0, to: self.data.count, by: 3){
-            if i != self.data.count{
+        self.Grid = []
+        for i in stride(from: 0, to: (self.profile?.posts.count)!, by: 3){
+            if i != self.profile?.posts.count{
                 self.Grid.append(i)
             }
-            
+        }
+    }
+
+    func fetchUserProfile(){
+        self.rest.getRequest(endpoint: "profile/UBh7cektzYhSu6s4s6IdEEsNfz63", of: UserProfile.self){data in
+            self.profile = data
+            self.posts = data.posts
+            self.generateGrid()
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(profile: UserProfile(userId: "hans", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "Tommy.Goossens", profilePictureURL: "empty", followers: ["henk"],following: ["piet"], posts: []), posts: [])
     }
 }
 
-func fetchUserProfile() -> GramProfile{
-    return GramProfile(userId:"adolf",firstName: "Tommy", surName: "Goossens", email: "tommygoossens@ziggo.nl", followers: 911, following: 2977)
-}
 
-func fetchUserPosts() -> [PostPreview]{
-    var data:[PostPreview] = []
+
+func fetchUserPosts() -> [ProfilePostPreview]{
+    var data:[ProfilePostPreview] = []
     for _ in stride(from: 0, to: 34, by: 1){
         let randomInt = Int.random(in: 0...imageNames.count-1)
-        data.append(PostPreview(imageURL: imageNames[randomInt]))
+        data.append(ProfilePostPreview(id: uint(randomInt),mediaURL: imageNames[randomInt]))
     }
     return data
 }
@@ -65,10 +71,20 @@ struct GramProfile{
     
 }
 
+//let imageNames = [
+//    "appicon",
+//    "911",
+//    "hitler",
+//    "chingchong",
+//    "rutte"
+//]
+
 let imageNames = [
     "appicon",
-    "911",
-    "hitler",
-    "chingchong",
-    "rutte"
+    "mountain1",
+    "mountain2",
+    "mountain3",
+    "nature1",
+    "nature2",
+    "nature3"
 ]
