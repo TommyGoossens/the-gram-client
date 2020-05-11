@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct UserProfile: Decodable, Equatable {
+struct UserProfile: Decodable {
+
+    
     var userId:String
     var email:String
     var firstName:String
@@ -16,7 +18,7 @@ struct UserProfile: Decodable, Equatable {
     var profilePictureURL:String
     var followers:[String]
     var following:[String]
-    
+    var posts:[ProfilePostPreview]
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
         case email = "email"
@@ -26,5 +28,6 @@ struct UserProfile: Decodable, Equatable {
         case profilePictureURL = "profilePictureURL"
         case followers = "followers"
         case following = "following"
+        case posts = "posts"
     }
 }

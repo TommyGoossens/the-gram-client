@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProfilePostGrid: View {
-    @Binding var data:[PostPreview]
+    @Binding var data:[ProfilePostPreview]
     @Binding var grid:[Int]
     var body: some View {
         VStack{
@@ -21,7 +21,8 @@ struct ProfilePostGrid: View {
                                 ForEach(i...i+2,id: \.self){j in
                                     VStack{
                                         if j < self.data.count{
-                                            PostThumbnail(imageURL: self.data[j].imageURL, postId: self.data[j].id)
+                                            Text("Post")
+//                                            PostThumbnail(imageURL: self.data[j].mediaURL, postId: self.data[j].id)
                                         }
                                     }
                                     
@@ -40,12 +41,6 @@ struct ProfilePostGrid: View {
 }
 struct ProfilePostGrid_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePostGrid(data: .constant([PostPreview(imageURL: "appicon")]), grid: .constant([1]) )
+        ProfilePostGrid(data: .constant([ProfilePostPreview(id:1,mediaURL: "appicon")]), grid: .constant([1]) )
     }
-}
-
-
-struct PostPreview: Identifiable {
-    let id:Int64 = 1
-    let imageURL: String
 }

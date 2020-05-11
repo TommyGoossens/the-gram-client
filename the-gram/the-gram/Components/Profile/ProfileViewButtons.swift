@@ -59,6 +59,6 @@ struct ProfileViewButtons: View {
 
 struct ProfileViewButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewButtons(user: .constant(UserProfile(userId: "Adolf", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"]))).environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
+        ProfileViewButtons(user: .constant(UserProfile(userId: "Adolf", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: []))).environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
     }
 }

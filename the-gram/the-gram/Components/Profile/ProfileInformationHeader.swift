@@ -59,6 +59,6 @@ struct ProfileInformationHeader: View {
 
 struct ProfileInformationHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationHeader(profile: .constant(UserProfile(userId: "Adolf", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"])))
+        ProfileInformationHeader(profile: .constant(UserProfile(userId: "tommy", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: [])))
     }
 }
