@@ -21,8 +21,10 @@ struct ProfilePostGrid: View {
                                 ForEach(i...i+2,id: \.self){j in
                                     VStack{
                                         if j < self.data.count{
-                                            Text("Post")
-//                                            PostThumbnail(imageURL: self.data[j].mediaURL, postId: self.data[j].id)
+                                            PostThumbnail(post: self.data[j]).onAppear{
+                                                print("------")
+                                                self.test(i: i, j: j)
+                                            }
                                         }
                                     }
                                     
@@ -32,15 +34,26 @@ struct ProfilePostGrid: View {
                                 }
                             }
                         }
+                    }.onAppear{
+                        print("Page load")
                     }
                 }
+            } else {
+                Spacer()
             }
             
         }
     }
+    
+    func test(i: Int, j: Int){
+        
+        print("i: \(i)")
+        
+        print("j: \(j)")
+    }
 }
 struct ProfilePostGrid_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePostGrid(data: .constant([ProfilePostPreview(id:1,mediaURL: "appicon")]), grid: .constant([1]) )
+        ProfilePostGrid(data: .constant([ProfilePostPreview(id:1,mediaURL: "https://firebasestorage.googleapis.com/v0/b/the-gram-c0daa.appspot.com/o/posts%2FUBh7cektzYhSu6s4s6IdEEsNfz63%2FUBh7cektzYhSu6s4s6IdEEsNfz63-5248933827683178974.jpg?alt=media&token=dcb50930-f56a-4500-8f40-83b5d970693d")]), grid: .constant([1]) )
     }
 }

@@ -21,7 +21,7 @@ struct ProfileInformationHeader: View {
                         Text("\(profile?.lastName ?? "Lastname")")
                             .font(.body)
                     }
-                    Text("\(profile?.email ?? "Email")")
+                    Text("\(profile?.userName ?? "Username")")
                         .font(.body)
                 }
                 HStack {

@@ -33,3 +33,13 @@ struct GramPost_Previews: PreviewProvider {
 func getRandomImage() -> String{
     return imageNames[Int.random(in: 0...imageNames.count-1)]
 }
+
+let imageNames = [
+    "appicon",
+    "mountain1",
+    "mountain2",
+    "mountain3",
+    "nature1",
+    "nature2",
+    "nature3"
+]

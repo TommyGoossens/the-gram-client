@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProfileViewButtons: View {
     @EnvironmentObject var session: SessionStorage
-   @Binding var user:UserProfile?
+    @Binding var user:UserProfile?
     var body: some View {
         HStack{
             if user?.userId == session.session?.uid{
@@ -59,6 +59,6 @@ struct ProfileViewButtons: View {
 
 struct ProfileViewButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewButtons(user: .constant(UserProfile(userId: "Adolf", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: []))).environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
+        ProfileViewButtons(user: .constant(UserProfile(userId: "jan", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: []))).environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
     }
 }
