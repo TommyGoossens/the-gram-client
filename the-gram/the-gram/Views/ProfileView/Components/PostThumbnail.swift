@@ -15,7 +15,7 @@ struct PostThumbnail: View {
             Button(action:{
                 print("Image")
             }, label: {
-                Image(uiImage: GetImage(mediaURL: post.mediaURL, postId: post.id))
+                Image(uiImage: MediaDownloader.GetImage(mediaURL: post.mediaURL))
                     .renderingMode(.original)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -27,11 +27,6 @@ struct PostThumbnail: View {
                 print("Image id \(self.post.id) is displayed on \(Date.init())")
             }
         }
-    }
-    func GetImage(mediaURL : String, postId: uint) -> UIImage {
-        let url:URL = URL(string: mediaURL)!
-        let imageData = try? Data(contentsOf: url)
-        return UIImage(data: imageData!)!
     }
     
 }

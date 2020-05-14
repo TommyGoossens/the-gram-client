@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct GramPost: View {
+    let profile: GramPostProfile = GramPostProfile(userName: "tommy", profilePictureURL: "https://autototaalbv.nl/wp-content/uploads/2017/04/profile-placeholder.png")
     var body: some View {
         VStack(spacing: 0.0) {
-            GramPostHeader()
+            GramPostHeader(profile: profile)
             Image(getRandomImage()).resizable()
                 .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
             GramPostButtons()

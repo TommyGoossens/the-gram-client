@@ -25,7 +25,7 @@ struct ProfileInformationHeader: View {
                         .font(.body)
                 }
                 HStack {
-                    CircularProfilePicture(height: 100)
+                    CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: profile!.profilePictureURL), height: 100)
                     VStack(alignment: .leading){
                         
                         HStack(alignment: .center) {
@@ -59,6 +59,6 @@ struct ProfileInformationHeader: View {
 
 struct ProfileInformationHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationHeader(profile: .constant(UserProfile(userId: "tommy", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: [])))
+        ProfileInformationHeader(profile: .constant(UserProfile(userId: "tommy", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"https://autototaalbv.nl/wp-content/uploads/2017/04/profile-placeholder.png", followers: ["911"], following: ["2977"], posts: [])))
     }
 }

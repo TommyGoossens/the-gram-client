@@ -52,7 +52,7 @@ struct ContentView: View {
                                     }
                             }.tag(GramViewTabs.post)
                             
-                            SettingsView()
+                            ChatView()
                                 .tabItem{
                                     Image(systemName: "gear")
                                         .resizable().frame(width:150.0, height: 15.0)
