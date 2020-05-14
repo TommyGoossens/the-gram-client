@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchTerm: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            TextField("Search for user", text: $searchTerm).padding(.all, 5).overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.black, lineWidth: 0.2)
+                )
+            Spacer()
+        }
+        .padding(.horizontal, 5.0)
     }
 }
 
