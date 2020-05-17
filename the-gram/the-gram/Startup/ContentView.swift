@@ -58,7 +58,7 @@ struct ContentView: View {
                                         .resizable().frame(width:150.0, height: 15.0)
                             }.tag(GramViewTabs.settings)
                             
-                            ProfileView()
+                            ProfileView(userId: session.session!.uid)
                                 .font(.title)
                                 .tabItem {
                                     VStack {

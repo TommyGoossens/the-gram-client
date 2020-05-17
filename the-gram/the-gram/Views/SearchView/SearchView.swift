@@ -13,9 +13,16 @@ struct SearchView: View {
     var body: some View {
         VStack{
             TextField("Search for user", text: $searchTerm).padding(.all, 5).overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.black, lineWidth: 0.2)
-                )
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.black, lineWidth: 0.2)
+            )
+            NavigationView{
+                List(1...5,id: \.self) {result in
+                    NavigationLink(destination: ProfileView(userId: "UBh7cektzYhSu6s4s6IdEEsNfz63")){
+                        ProfileSearchResult(userName: "test", profilePictureURL: "test.jpg")
+                    }
+                }
+            }
             Spacer()
         }
         .padding(.horizontal, 5.0)
