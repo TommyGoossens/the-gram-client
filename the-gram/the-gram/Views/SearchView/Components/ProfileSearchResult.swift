@@ -9,28 +9,29 @@
 import SwiftUI
 
 struct ProfileSearchResult: View {
-    let userName: String
-    let profilePictureURL: String
+    let user: UserSearchResult
     var body: some View {
         HStack{
             
-            CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: profilePictureURL), height: UIScreen.main.bounds.height/10)
+            CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: user.profilePictureURL), height: UIScreen.main.bounds.height/15)
             VStack {
-                Text(userName)
+                Text(user.userName)
+                    .font(.body)
+                    .fontWeight(.regular)
                     .multilineTextAlignment(.leading)
-                Button(action: {print("Following!")}, label: {Text("Follow")}).padding(.trailing).frame(width: 150)
             }
             Spacer()
             
             
             
         }
-        .padding(.horizontal)
     }
 }
 
 struct ProfileSearchResult_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSearchResult(userName: "tommy.goossens", profilePictureURL: "https://autototaalbv.nl/wp-content/uploads/2017/04/profile-placeholder.png")
+        ProfileSearchResult(user: tempUser)
     }
 }
+
+let tempUser:UserSearchResult = UserSearchResult(userId: "1",userName: "tommy.goossens", profilePictureURL: "no_pic")

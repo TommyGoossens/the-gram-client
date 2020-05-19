@@ -9,23 +9,49 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var searchTerm: String = ""
-    var body: some View {
-        VStack{
-            TextField("Search for user", text: $searchTerm).padding(.all, 5).overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.black, lineWidth: 0.2)
-            )
-            NavigationView{
-                List(1...5,id: \.self) {result in
-                    NavigationLink(destination: ProfileView(userId: "UBh7cektzYhSu6s4s6IdEEsNfz63")){
-                        ProfileSearchResult(userName: "test", profilePictureURL: "test.jpg")
-                    }
-                }
-            }
-            Spacer()
+    private let restService:RestService = RestService()
+    @State var searchTerm: String = "" {
+        didSet {
+            print(searchTerm)
         }
-        .padding(.horizontal, 5.0)
+    }
+    @State var searchResults: [UserSearchResult] = [UserSearchResult(userId: "Tommy", userName: "tommy_goossens", profilePictureURL: "")]
+    
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                createSearchBar()
+                if searchResults.count > 0 {
+                    SearchResultList(searchResults: $searchResults)
+                }
+                else{
+                    if searchTerm != "" {
+                        Text("No results found for \(searchTerm)")
+                    }
+                    Spacer()
+                }
+            }.navigationBarTitle("").navigationBarHidden(true)
+            
+        }
+    }
+    
+    private func createSearchBar() -> SearchBar {
+        var searchBar = SearchBar(text: self.$searchTerm, placeholder: "Search for an username")
+        searchBar.onSearchTextUpdate = { searchText in
+            self.searchTerm = searchText
+            if searchText.count >= 3
+            {
+                self.queryUsers(searchText: searchText)
+            }
+        }
+        return searchBar
+    }
+    
+    private func queryUsers(searchText:String) -> Void {
+        self.restService.getRequest(endpoint: "profile/query/\(searchText)", of: [UserSearchResult].self) { response in
+            self.searchResults = response
+        }
     }
 }
 

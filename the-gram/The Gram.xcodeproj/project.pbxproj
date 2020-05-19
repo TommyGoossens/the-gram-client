@@ -38,6 +38,7 @@
 		7D38C001241CFEC50079F76E /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38C000241CFEC50079F76E /* KeyboardHost.swift */; };
 		7D38C003241D0C460079F76E /* SessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38C002241D0C460079F76E /* SessionStorage.swift */; };
 		7D38C005241D167C0079F76E /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38C004241D167C0079F76E /* AuthenticationView.swift */; };
+		7D4082E62473D68F00C071B9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4082E52473D68F00C071B9 /* Debouncer.swift */; };
 		7D484F98246DC7140098CC27 /* ProfileSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D484F97246DC7140098CC27 /* ProfileSearchResult.swift */; };
 		7D484F9A246DC9EF0098CC27 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D484F99246DC9EF0098CC27 /* MediaDownloader.swift */; };
 		7D484F9C246DCBCF0098CC27 /* GramPostProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D484F9B246DCBCF0098CC27 /* GramPostProfile.swift */; };
@@ -47,6 +48,7 @@
 		7D5154FD242271240047CFDA /* PicturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FC242271240047CFDA /* PicturePreview.swift */; };
 		7D5154FF2422740E0047CFDA /* PostDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5154FE2422740E0047CFDA /* PostDescription.swift */; };
 		7D585907241CDD550099CF0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D585906241CDD550099CF0F /* GoogleService-Info.plist */; };
+		7D6F68DD2471AB8B0063A20D /* TextEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F68DC2471AB8B0063A20D /* TextEngine.swift */; };
 		7D70F655244E178300FBD4AC /* ProfileInformationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F654244E178300FBD4AC /* ProfileInformationHeader.swift */; };
 		7D70F657244E1A8900FBD4AC /* ProfilePostGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */; };
 		7D70F659244E1AA900FBD4AC /* PostThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */; };
@@ -55,6 +57,9 @@
 		7D9B7E542425015200FE3C5C /* GramViewTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B7E532425015200FE3C5C /* GramViewTabs.swift */; };
 		7DABC0212428D8DB007E73C6 /* NewGramPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABC0202428D8DB007E73C6 /* NewGramPost.swift */; };
 		7DABC0232428E2FF007E73C6 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABC0222428E2FE007E73C6 /* RestService.swift */; };
+		7DC2454E2471778C007383B3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2454D2471778C007383B3 /* SearchBar.swift */; };
+		7DC2455024717812007383B3 /* UserSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2454F24717812007383B3 /* UserSearchResult.swift */; };
+		7DC2455224717AFF007383B3 /* SearchResultList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2455124717AFF007383B3 /* SearchResultList.swift */; };
 		7DDC407B24689662005B8415 /* ProfilePostPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC407A24689662005B8415 /* ProfilePostPreview.swift */; };
 		7DF4C3AA2424CD3900BA0FCF /* MultiLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C3A92424CD3900BA0FCF /* MultiLineTextView.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +120,7 @@
 		7D38C000241CFEC50079F76E /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
 		7D38C002241D0C460079F76E /* SessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStorage.swift; sourceTree = "<group>"; };
 		7D38C004241D167C0079F76E /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		7D4082E52473D68F00C071B9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		7D484F97246DC7140098CC27 /* ProfileSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSearchResult.swift; sourceTree = "<group>"; };
 		7D484F99246DC9EF0098CC27 /* MediaDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDownloader.swift; sourceTree = "<group>"; };
 		7D484F9B246DCBCF0098CC27 /* GramPostProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GramPostProfile.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		7D5154FC242271240047CFDA /* PicturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePreview.swift; sourceTree = "<group>"; };
 		7D5154FE2422740E0047CFDA /* PostDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescription.swift; sourceTree = "<group>"; };
 		7D585906241CDD550099CF0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D6F68DC2471AB8B0063A20D /* TextEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEngine.swift; sourceTree = "<group>"; };
 		7D70F654244E178300FBD4AC /* ProfileInformationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationHeader.swift; sourceTree = "<group>"; };
 		7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostGrid.swift; sourceTree = "<group>"; };
 		7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostThumbnail.swift; sourceTree = "<group>"; };
@@ -133,6 +140,9 @@
 		7DAB8B1F241CE52D005CCF07 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DABC0202428D8DB007E73C6 /* NewGramPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGramPost.swift; sourceTree = "<group>"; };
 		7DABC0222428E2FE007E73C6 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		7DC2454D2471778C007383B3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		7DC2454F24717812007383B3 /* UserSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchResult.swift; sourceTree = "<group>"; };
+		7DC2455124717AFF007383B3 /* SearchResultList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultList.swift; sourceTree = "<group>"; };
 		7DDC407A24689662005B8415 /* ProfilePostPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostPreview.swift; sourceTree = "<group>"; };
 		7DF4C3A92424CD3900BA0FCF /* MultiLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextView.swift; sourceTree = "<group>"; };
 		A84BEF3554F778A297B7B32F /* Pods_The_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +327,8 @@
 				7D38C002241D0C460079F76E /* SessionStorage.swift */,
 				7D5154F5242261CE0047CFDA /* ImagePicker.swift */,
 				7D484F99246DC9EF0098CC27 /* MediaDownloader.swift */,
+				7D6F68DC2471AB8B0063A20D /* TextEngine.swift */,
+				7D4082E52473D68F00C071B9 /* Debouncer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -363,6 +375,7 @@
 			children = (
 				7D484F96246DC6FC0098CC27 /* Components */,
 				7D34D7FD2418FD640031A974 /* SearchView.swift */,
+				7DC2454F24717812007383B3 /* UserSearchResult.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -379,6 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				7D484F97246DC7140098CC27 /* ProfileSearchResult.swift */,
+				7DC2454D2471778C007383B3 /* SearchBar.swift */,
+				7DC2455124717AFF007383B3 /* SearchResultList.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -658,14 +673,17 @@
 				7D912CD124503BB000D856B8 /* ProfileViewButtons.swift in Sources */,
 				7D34D7E52417C0490031A974 /* HomeView.swift in Sources */,
 				7D5154F8242265290047CFDA /* PhotoCaptureView.swift in Sources */,
+				7D6F68DD2471AB8B0063A20D /* TextEngine.swift in Sources */,
 				7D70F655244E178300FBD4AC /* ProfileInformationHeader.swift in Sources */,
 				7D34D7E72417C06B0031A974 /* ProfileView.swift in Sources */,
 				7D34D7B32417BA9D0031A974 /* SceneDelegate.swift in Sources */,
+				7DC2455024717812007383B3 /* UserSearchResult.swift in Sources */,
 				7D5154F6242261CE0047CFDA /* ImagePicker.swift in Sources */,
 				7D38BFFA241CF7C90079F76E /* User.swift in Sources */,
 				7D34D8002418FD730031A974 /* ChatView.swift in Sources */,
 				7DF4C3AA2424CD3900BA0FCF /* MultiLineTextView.swift in Sources */,
 				7D34D7EF2418DF9C0031A974 /* GramPostHeader.swift in Sources */,
+				7DC2455224717AFF007383B3 /* SearchResultList.swift in Sources */,
 				7D70F659244E1AA900FBD4AC /* PostThumbnail.swift in Sources */,
 				7D103A382450D1280029E506 /* UserProfile.swift in Sources */,
 				7D34D7FE2418FD640031A974 /* SearchView.swift in Sources */,
@@ -679,7 +697,9 @@
 				7D34D7FA2418FD3D0031A974 /* LoginView.swift in Sources */,
 				7DABC0212428D8DB007E73C6 /* NewGramPost.swift in Sources */,
 				7DABC0232428E2FF007E73C6 /* RestService.swift in Sources */,
+				7D4082E62473D68F00C071B9 /* Debouncer.swift in Sources */,
 				7D70F657244E1A8900FBD4AC /* ProfilePostGrid.swift in Sources */,
+				7DC2454E2471778C007383B3 /* SearchBar.swift in Sources */,
 				7D9B7E52242500C600FE3C5C /* AppState.swift in Sources */,
 				7D5154FF2422740E0047CFDA /* PostDescription.swift in Sources */,
 				7D34D7ED2417C4480031A974 /* GramPostButtons.swift in Sources */,

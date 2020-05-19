@@ -11,7 +11,7 @@ import SwiftUI
 import Alamofire
 
 class RestService {
-    let api: String = "https://127.0.0.1:5001/api/"
+    private let api: String = "https://127.0.0.1:5001/api/"
     
     let manager = ServerTrustManager(evaluators: ["127.0.0.1": DisabledEvaluator()])
     let session: Session

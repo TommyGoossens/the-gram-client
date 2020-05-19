@@ -12,6 +12,9 @@ struct MediaDownloader {
     
     
     static func GetImage(mediaURL : String) -> UIImage {
+        if mediaURL == "" {
+            return UIImage(named: "appicon")!
+        }
         let url: URL = URL(string: mediaURL)!
         guard let imageData = try? Data(contentsOf: url) else{
             return UIImage(named: "appicon")!
