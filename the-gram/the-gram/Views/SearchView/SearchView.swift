@@ -10,13 +10,9 @@ import SwiftUI
 
 struct SearchView: View {
     private let restService:RestService = RestService()
-    @State var searchTerm: String = "" {
-        didSet {
-            print(searchTerm)
-        }
-    }
-    @State var searchResults: [UserSearchResult] = [UserSearchResult(userId: "Tommy", userName: "tommy_goossens", profilePictureURL: "")]
-    
+    @State var pageNumber = 1
+    @State var searchTerm: String = ""
+    @State var searchResults: [UserSearchResult] = []
     
     var body: some View {
         NavigationView{
@@ -49,7 +45,11 @@ struct SearchView: View {
     }
     
     private func queryUsers(searchText:String) -> Void {
-        self.restService.getRequest(endpoint: "profile/query/\(searchText)", of: [UserSearchResult].self) { response in
+        let body: [String: AnyObject] = [
+            "searchTerm":searchText as AnyObject,
+            "pagNumber":self.pageNumber as AnyObject
+        ]
+        self.restService.postRequest(endpoint: "profile/query/",body: body, of: [UserSearchResult].self) { response in
             self.searchResults = response
         }
     }
