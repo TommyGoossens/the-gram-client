@@ -12,7 +12,6 @@ struct ProfileSearchResult: View {
     let user: UserSearchResult
     var body: some View {
         HStack{
-            
             CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: user.profilePictureURL), height: UIScreen.main.bounds.height/15)
             VStack {
                 Text(user.userName)

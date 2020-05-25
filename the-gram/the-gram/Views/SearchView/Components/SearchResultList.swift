@@ -11,11 +11,11 @@ import SwiftUI
 struct SearchResultList: View {
     @Binding var searchResults: [UserSearchResult]
     var body: some View {
-            List(searchResults, id: \.userId) {result in
-                            NavigationLink(destination: ProfileView(userId: result.userId)){
-                                ProfileSearchResult(user: result)
-                            }
-                        }
+        List(searchResults, id: \.userId) {result in
+            NavigationLink(destination: ProfileView(userId: result.userId)){
+                ProfileSearchResult(user: result)
+            }
+        }
     }
 }
 

@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct UserSearchResult: Decodable {
+struct UserSearchResult: InfiniteScrollingListValue, Decodable{
+    var id = UUID()
+    
     var userId:String
     var userName:String
     var profilePictureURL:String
