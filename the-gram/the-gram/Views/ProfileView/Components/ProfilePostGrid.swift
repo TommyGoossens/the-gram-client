@@ -21,10 +21,7 @@ struct ProfilePostGrid: View {
                                 ForEach(i...i+2,id: \.self){j in
                                     VStack{
                                         if j < self.data.count{
-                                            PostThumbnail(post: self.data[j]).onAppear{
-                                                print("------")
-                                                self.test(i: i, j: j)
-                                            }
+                                            PostThumbnail(post: self.data[j])
                                         }
                                     }
                                     

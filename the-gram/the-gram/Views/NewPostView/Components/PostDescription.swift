@@ -17,11 +17,6 @@ struct PostDescription: View {
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.black, lineWidth: 0.2)
                     )
-//                HStack {
-//                    Spacer()
-//                    Text("\(self.$description.wrappedValue.count)/10 characters")
-//                        .font(.caption)
-//                }
             }
 
         }

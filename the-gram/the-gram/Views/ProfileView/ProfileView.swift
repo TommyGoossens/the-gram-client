@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    let userId: String
     let rest = RestService()
     @State var profile:UserProfile? = nil
     @State var posts:[ProfilePostPreview] = []
@@ -37,7 +38,7 @@ struct ProfileView: View {
     }
 
     func fetchUserProfile(){
-        self.rest.getRequest(endpoint: "profile/UBh7cektzYhSu6s4s6IdEEsNfz63", of: UserProfile.self){data in
+        self.rest.getRequest(endpoint: "profile/\(userId)", of: UserProfile.self){data in
             self.profile = data
             self.posts = data.posts
             print("Data is received on \(Date.init())")
@@ -48,6 +49,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(profile: UserProfile(userId: "hans", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "Tommy.Goossens", profilePictureURL: "empty", followers: ["henk"],following: ["piet"], posts: []))
+        ProfileView(userId: "UBh7cektzYhSu6s4s6IdEEsNfz63")
     }
 }

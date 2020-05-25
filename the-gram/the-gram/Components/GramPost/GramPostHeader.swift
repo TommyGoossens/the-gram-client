@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct GramPostHeader: View {
+    let profile: GramPostProfile
     var body: some View {
         HStack {
-            CircularProfilePicture(height: 50.0)
-            Text("Tommy Goossens")
+            CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: profile.profilePictureURL), height: 50.0)
+            Text(profile.userName)
                 .font(.body)
             Spacer()
         }
@@ -22,6 +23,6 @@ struct GramPostHeader: View {
 
 struct GramPostHeader_Previews: PreviewProvider {
     static var previews: some View {
-        GramPostHeader()
+        GramPostHeader(profile: GramPostProfile(userName: "tommy", profilePictureURL: "https://autototaalbv.nl/wp-content/uploads/2017/04/profile-placeholder.png"))
     }
 }

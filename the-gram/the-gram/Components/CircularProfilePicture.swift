@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct CircularProfilePicture: View {
+    let image: UIImage
     let height:CGFloat
     var body: some View {
-        Image("appicon")
+        Image(uiImage: image)
             .resizable()
             .frame(width: height, height: height)
             .clipShape(Circle())
@@ -21,6 +22,6 @@ struct CircularProfilePicture: View {
 
 struct CircularProfilePicture_Previews: PreviewProvider {
     static var previews: some View {
-        CircularProfilePicture(height: 15.0)
+        CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: "https://autototaalbv.nl/wp-content/uploads/2017/04/profile-placeholder.png"),height: 150.0)
     }
 }
