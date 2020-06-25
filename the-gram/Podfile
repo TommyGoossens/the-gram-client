@@ -6,8 +6,10 @@ target 'The Gram' do
   use_frameworks!
   #use_modular_headers!
   
+  #Http client
   pod 'Alamofire', '~> 5.0'
-
+  #Async image downloader
+  pod 'Kingfisher', '~> 5.0'
   # Pods for The Gram
   pod 'Firebase'
   pod 'Firebase/Auth'

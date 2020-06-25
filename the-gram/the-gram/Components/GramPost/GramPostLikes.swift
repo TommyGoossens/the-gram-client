@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct GramPostLikes: View {
+    let numberOfLikes:Int
     var body: some View {
         HStack {
-            Text("1938 likes")
+            Text("\(numberOfLikes) \(numberOfLikes == 1 ? "like" : "likes")")
                 .font(.body)
                 .fontWeight(.medium)
                 .padding(.leading, 10.0)
@@ -22,6 +23,6 @@ struct GramPostLikes: View {
 
 struct GramPostLikes_Previews: PreviewProvider {
     static var previews: some View {
-        GramPostLikes()
+        GramPostLikes(numberOfLikes: 1940)
     }
 }

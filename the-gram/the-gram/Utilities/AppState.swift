@@ -9,5 +9,5 @@ import Foundation
 
 final class Appstate: ObservableObject{
     @Published var isShowingNewPostView: Bool = true
-    @Published var selectedTab: GramViewTabs = .home
+    @Published var selectedTab: GramViewTabs = .profile
 }

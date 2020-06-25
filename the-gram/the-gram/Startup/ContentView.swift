@@ -12,67 +12,69 @@ import FirebaseAuth
 struct ContentView: View {    
     @EnvironmentObject var appState: Appstate    
     @EnvironmentObject var session: SessionStorage
-
+    private var restService = RestService()
     var body: some View {
         Group {
             if (session.session != nil) {
-                Group {
-                    
-                    if appState.isShowingNewPostView && appState.selectedTab == .post {
-                        Text("").sheet(isPresented: self.$appState.isShowingNewPostView, onDismiss: {
-                            self.appState.isShowingNewPostView.toggle()
-                            self.appState.selectedTab = .none
-                        }, content: {
-                            NewPostView(isDisplaying: self.$appState.isShowingNewPostView)
-                        })
-                    }else{
-                        TabView(selection: self.$appState.selectedTab){
-                            HomeView()
-                                .font(.title)
-                                .tabItem {
-                                    VStack {
-                                        Image(systemName: "house")
-                                        Text("Home")
-                                    }
+                NavigationView{
+                    Group {
+                        
+                        if appState.isShowingNewPostView && appState.selectedTab == .post {
+                            Text("").sheet(isPresented: self.$appState.isShowingNewPostView, onDismiss: {
+                                self.appState.isShowingNewPostView.toggle()
+                                self.appState.selectedTab = .none
+                            }, content: {
+                                NewPostView(isDisplaying: self.$appState.isShowingNewPostView)
+                            })
+                        }else{
+                            TabView(selection: self.$appState.selectedTab){
+                                HomeView().navigationBarTitle("").navigationBarHidden(true)
+                                    .font(.title)
+                                    .tabItem {
+                                        VStack {
+                                            Image(systemName: "house")
+                                            Text("Home")
+                                        }
+                                }
+                                .tag(GramViewTabs.home)
+                                
+                                SearchView().navigationBarTitle("").navigationBarHidden(true)
+                                    .tabItem{
+                                        VStack{
+                                            Image(systemName: "magnifyingglass")
+                                            Text("Search")
+                                        }
+                                }.tag(GramViewTabs.search)
+                                Text("Post")
+                                    .tabItem{
+                                        VStack{
+                                            Image(systemName: "camera")
+                                            Text("Post")
+                                        }
+                                }.tag(GramViewTabs.post)
+                                
+                                ChatView().navigationBarTitle("").navigationBarHidden(true)
+                                    .tabItem{
+                                        Image(systemName: "message")
+                                        Text("Chat")
+                                }.tag(GramViewTabs.settings)
+                                
+                                ProfileView(navBarHidden: true, userId: session.session!.uid)
+                                    .font(.title)
+                                    .tabItem {
+                                        VStack {
+                                            Image(systemName: "person.crop.circle")
+                                            Text("Profile")
+                                        }
+                                }
+                                .tag(GramViewTabs.profile)
                             }
-                            .tag(GramViewTabs.home)
-                            
-                            SearchView()
-                                .tabItem{
-                                    VStack{
-                                        Image(systemName: "magnifyingglass")
-                                        Text("Search")
-                                    }
-                            }.tag(GramViewTabs.search)
-                            Text("Post")
-                                .tabItem{
-                                    VStack{
-                                        Image(systemName: "camera")
-                                        Text("Post")
-                                    }
-                            }.tag(GramViewTabs.post)
-                            
-                            ChatView()
-                                .tabItem{
-                                    Image(systemName: "gear")
-                                        .resizable().frame(width:150.0, height: 15.0)
-                            }.tag(GramViewTabs.settings)
-                            
-                            ProfileView(userId: session.session!.uid)
-                                .font(.title)
-                                .tabItem {
-                                    VStack {
-                                        Image(systemName: "person.crop.circle")
-                                        Text("Profile")
-                                    }
-                            }
-                            .tag(GramViewTabs.profile)
                         }
+                        
                     }
-                    
                 }
             }
-
+                
             else{
                 AuthenticationView()
             }
@@ -81,7 +83,6 @@ struct ContentView: View {
     
     
     func getUser() {
-        print(session.session != nil)
         session.listen()
     }
 }

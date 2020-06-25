@@ -10,15 +10,18 @@ import SwiftUI
 
 struct ProfileViewButtons: View {
     @EnvironmentObject var session: SessionStorage
-    @Binding var user:UserProfile?
+    @EnvironmentObject var appState:Appstate
+    var userId:String?
+    var restService:RestService = RestService()
     var body: some View {
         HStack{
-            if user?.userId == session.session?.uid{
+            if userId == session.session?.uid{
                 HStack {
                     HStack{
                         Spacer()
                         Button(action:{
                             self.session.signOut()
+                            self.appState.selectedTab = .home
                         }, label: {
                             Text("Logout")
                                 .font(.callout)
@@ -37,7 +40,9 @@ struct ProfileViewButtons: View {
                 HStack{
                     Spacer()
                     Button(action:{
-                        print("Follow")
+                        self.restService.putRequest(endpoint: "profile/followers/\(self.userId!)", body: [:], of: Bool.self){result in
+                            print(result)
+                        }
                     }, label: {
                         Text("Follow")
                             .font(.callout)
@@ -53,12 +58,14 @@ struct ProfileViewButtons: View {
                 }
             }
         }
+        
+        
     }
     
 }
 
 struct ProfileViewButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewButtons(user: .constant(UserProfile(userId: "jan", email: "tommygoossens@ziggo.nl", firstName: "Tommy", lastName: "Goossens", userName: "henk", profilePictureURL:"empty", followers: ["911"], following: ["2977"], posts: []))).environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
+        ProfileViewButtons(userId: "Tommy").environmentObject(SessionStorage(session: User(uid: "jan", displayName: "TommyGoossens", email: "tommygoossens@ziggo.nl")))
     }
 }

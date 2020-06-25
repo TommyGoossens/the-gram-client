@@ -12,7 +12,7 @@ struct ProfileSearchResult: View {
     let user: UserSearchResult
     var body: some View {
         HStack{
-            CircularProfilePicture(image: MediaDownloader.GetImage(mediaURL: user.profilePictureURL), height: UIScreen.main.bounds.height/15)
+            CircularProfilePicture(imageUrl: user.profilePictureURL, height: UIScreen.main.bounds.height/15)
             VStack {
                 Text(user.userName)
                     .font(.body)
@@ -23,7 +23,7 @@ struct ProfileSearchResult: View {
             
             
             
-        }
+        }.navigationBarTitle("").navigationBarHidden(false)
     }
 }
 
@@ -33,4 +33,4 @@ struct ProfileSearchResult_Previews: PreviewProvider {
     }
 }
 
-let tempUser:UserSearchResult = UserSearchResult(userId: "1",userName: "tommy.goossens", profilePictureURL: "no_pic")
+let tempUser:UserSearchResult = UserSearchResult(userId: "UBh7cektzYhSu6s4s6IdEEsNfz63",userName: "tommy.goossens", profilePictureURL: "no_pic")

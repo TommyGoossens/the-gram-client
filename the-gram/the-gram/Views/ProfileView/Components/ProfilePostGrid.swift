@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProfilePostGrid: View {
-    @Binding var data:[ProfilePostPreview]
+    @Binding var data:[Post]
     @Binding var grid:[Int]
     var body: some View {
         VStack{
@@ -31,8 +31,6 @@ struct ProfilePostGrid: View {
                                 }
                             }
                         }
-                    }.onAppear{
-                        print("Page load")
                     }
                 }
             } else {
@@ -51,6 +49,6 @@ struct ProfilePostGrid: View {
 }
 struct ProfilePostGrid_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePostGrid(data: .constant([ProfilePostPreview(id:1,mediaURL: "https://firebasestorage.googleapis.com/v0/b/the-gram-c0daa.appspot.com/o/posts%2FUBh7cektzYhSu6s4s6IdEEsNfz63%2FUBh7cektzYhSu6s4s6IdEEsNfz63-5248933827683178974.jpg?alt=media&token=dcb50930-f56a-4500-8f40-83b5d970693d")]), grid: .constant([1]) )
+        ProfilePostGrid(data: .constant([mockPost]), grid: .constant([1]) )
     }
 }

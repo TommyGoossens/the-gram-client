@@ -8,7 +8,7 @@
 
 import Foundation
 struct ProfilePostPreview : Decodable {
-    var id: uint
+    var id: Int
     var mediaURL: String
     
     enum CodingKeys: String, CodingKey {

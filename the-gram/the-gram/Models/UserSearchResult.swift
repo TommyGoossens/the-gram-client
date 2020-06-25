@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct UserSearchResult: InfiniteScrollingListValue, Decodable{
+struct UserSearchResult: ObvservableListItem, Decodable{
     var id = UUID()
     
     var userId:String

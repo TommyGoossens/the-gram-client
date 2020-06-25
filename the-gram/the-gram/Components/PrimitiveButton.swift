@@ -24,3 +24,12 @@ struct PrimitiveButton: ButtonStyle {
                  .opacity(configuration.isPressed ? 0.5 : 1.0)
     }
 }
+
+struct PrimitiveButton_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack{
+            Button(action: {print("button")}, label: {Text("press me")}).buttonStyle(PrimitiveButton(isCancelButton: false)).padding()
+            Button(action: {print("button")}, label: {Text("press me")}).buttonStyle(PrimitiveButton(isCancelButton: true)).padding()
+        }
+    }
+}
