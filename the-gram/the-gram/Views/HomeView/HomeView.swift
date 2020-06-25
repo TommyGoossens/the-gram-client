@@ -7,28 +7,35 @@
 //
 
 import SwiftUI
-
 struct HomeView: View {
     private let restService:RestService = RestService()
     @ObservedObject var feedPosts = InfiniteScrollingList<Post>(endpoint:"feed")
+    @State var showRefreshView: Bool = false
     var body: some View {
         VStack{
             if self.feedPosts.count > 0{
+                
                 NavigationView{
-                    ScrollView(.vertical, showsIndicators: false){
-                        VStack(spacing:5){
-                            ForEach(self.feedPosts, id:\.postId){ post in
-                                GramFeedPost(post: post)
+                    RefreshableList(showRefreshView: self.$showRefreshView, action: {
+                        self.showRefreshView = false
+                        self.feedPosts.loadInitialResults(pathParams: [], keepCurrentData: false)
+                    }, content: {
+                        ScrollView(.vertical, showsIndicators: false){
+                            VStack(spacing:5){
+                                ForEach(self.feedPosts, id:\.postId){ post in
+                                    GramFeedPost(post: post)
+                                }
                             }
-                        }
                         }.navigationBarTitle("").navigationBarHidden(true)
+                    })
+                    
                 }
                 
             }
             else{
                 if self.feedPosts.currentlyLoading {
                     Text("Fetching posts")
-                    ActivityIndicator(isAnimating: .constant(true), style: .large)
+                    RestActivityIndicator(isAnimating: .constant(true), style: .large)
                 } else{
                     Spacer()
                     Text("There are no posts to view.")

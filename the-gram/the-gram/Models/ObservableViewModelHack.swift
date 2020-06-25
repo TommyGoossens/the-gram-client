@@ -26,10 +26,13 @@ class ObservableViewModelHack<T:ObvservableListItem>: ObservableObject, RandomAc
     }
     
     func fetchList(pathParams: [String]){
+        
         if currentlyLoading{
             return
         }
-        
+        DispatchQueue.main.async {
+            self.listItems.removeAll()
+        }
         var urlParams: String = ""
         for i in stride(from: 0, to: pathParams.count, by: 1){
             urlParams += "/\(pathParams[i])"

@@ -12,8 +12,8 @@ struct PostThumbnail: View {
     var post: Post
     @State var postThumbnailNavIsActive = false
     var body: some View {
-        Button(action: {self.postThumbnailNavIsActive = true}, label: {
-            NavigationLink(destination: PostDetailView(post: self.post),isActive: self.$postThumbnailNavIsActive,label: {
+        
+            NavigationLink(destination: PostDetailView(post: self.post),label: {
             KFImage(URL(string: post.mediaURL))
                 .renderingMode(.original)
                 .resizable()
@@ -22,7 +22,7 @@ struct PostThumbnail: View {
                 .clipped()
                 
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/).scaledToFit()
-        })})
+        })
     }
     
 }

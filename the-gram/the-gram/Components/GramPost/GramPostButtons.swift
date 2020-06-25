@@ -52,7 +52,7 @@ struct GramPostButtons: View {
     }
     
      func likePicture(){
-        self.restService.putRequest(endpoint: "post/like/\(self.postId)", body: [:], of: Bool.self){ response in
+        self.restService.putRequest(endpoint: "post/\(self.postId)/like", body: [:], of: Bool.self){ response in
             print(response)
         }
     }
