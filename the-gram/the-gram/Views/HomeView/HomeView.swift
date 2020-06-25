@@ -26,14 +26,20 @@ struct HomeView: View {
                 
             }
             else{
-                Spacer()
-                Text("There are no posts to view.")
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                Text("Perhaps you can follow some new users?")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                Spacer()
+                if self.feedPosts.currentlyLoading {
+                    Text("Fetching posts")
+                    ActivityIndicator(isAnimating: .constant(true), style: .large)
+                } else{
+                    Spacer()
+                    Text("There are no posts to view.")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                    Text("Perhaps you can follow some new users?")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
+                
             }
         }.onAppear{
             self.feedPosts.loadInitialResults(pathParams: [], keepCurrentData: true)

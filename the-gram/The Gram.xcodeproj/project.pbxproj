@@ -54,6 +54,7 @@
 		7D70F657244E1A8900FBD4AC /* ProfilePostGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */; };
 		7D70F659244E1AA900FBD4AC /* PostThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */; };
 		7D7113E124A4C57E007EA8D1 /* ObservableViewModelHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7113E024A4C57E007EA8D1 /* ObservableViewModelHack.swift */; };
+		7D7113E324A4CE3E007EA8D1 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7113E224A4CE3E007EA8D1 /* ActivityIndicator.swift */; };
 		7D912CD124503BB000D856B8 /* ProfileViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D912CD024503BB000D856B8 /* ProfileViewButtons.swift */; };
 		7D91912A2489122A00027D3B /* FollowerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9191292489122A00027D3B /* FollowerListView.swift */; };
 		7D91912C2489124100027D3B /* FollowerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D91912B2489124100027D3B /* FollowerListItem.swift */; };
@@ -146,6 +147,7 @@
 		7D70F656244E1A8900FBD4AC /* ProfilePostGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostGrid.swift; sourceTree = "<group>"; };
 		7D70F658244E1AA900FBD4AC /* PostThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostThumbnail.swift; sourceTree = "<group>"; };
 		7D7113E024A4C57E007EA8D1 /* ObservableViewModelHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewModelHack.swift; sourceTree = "<group>"; };
+		7D7113E224A4CE3E007EA8D1 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		7D912CD024503BB000D856B8 /* ProfileViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewButtons.swift; sourceTree = "<group>"; };
 		7D9191292489122A00027D3B /* FollowerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListView.swift; sourceTree = "<group>"; };
 		7D91912B2489124100027D3B /* FollowerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListItem.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				7D221ACB241CE90E00C4208F /* PrimitiveButton.swift */,
 				7D5154FC242271240047CFDA /* PicturePreview.swift */,
 				7D2C028A24A2889500399E28 /* PostComment.swift */,
+				7D7113E224A4CE3E007EA8D1 /* ActivityIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				7D912CD124503BB000D856B8 /* ProfileViewButtons.swift in Sources */,
 				7D34D7E52417C0490031A974 /* HomeView.swift in Sources */,
 				7D5154F8242265290047CFDA /* PhotoCaptureView.swift in Sources */,
+				7D7113E324A4CE3E007EA8D1 /* ActivityIndicator.swift in Sources */,
 				7D70F655244E178300FBD4AC /* ProfileInformationHeader.swift in Sources */,
 				7D34D7E72417C06B0031A974 /* ProfileView.swift in Sources */,
 				7D34D7B32417BA9D0031A974 /* SceneDelegate.swift in Sources */,

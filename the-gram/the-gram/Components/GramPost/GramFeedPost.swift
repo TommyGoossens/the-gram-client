@@ -10,25 +10,29 @@ import SwiftUI
 import KingfisherSwiftUI
 struct GramFeedPost: View {
     let post:Post
+    @State var profileNavIsActive = false;
+    @State var postDetailNavIsActive = false
     init(post:Post) {
         self.post = post
     }
     
     var body: some View {
         VStack(spacing: 0.0) {
-            NavigationLink(destination: ProfileView(navBarHidden: false, userId: post.user.userId)){
-                GramPostHeader(profile: post.user)
-            }
-            
-            NavigationLink(destination: PostDetailView(post: post),label: {
-            KFImage(URL(string: post.mediaURL)).renderingMode(.original).resizable()
-                .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
+            Button(action: {self.profileNavIsActive = true}, label: {
+                NavigationLink(destination: ProfileView(navBarHidden: false, userId: post.user.userId), isActive: self.$profileNavIsActive){
+                    GramPostHeader(profile: post.user)
+                }
             })
+            Button(action: {self.postDetailNavIsActive = true}, label: {
+                NavigationLink(destination: PostDetailView(post: post), isActive: self.$postDetailNavIsActive,label: {
+                    KFImage(URL(string: post.mediaURL)).renderingMode(.original).resizable()
+                        .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
+                })})
             GramPostButtons(postId: post.postId, likedPic: post.postLikedByAuthUser, datePosted: post.datePosted)
                 .padding(.top, 5.0)
             Group {
                 GramPostLikes(numberOfLikes: post.likes)
-                .padding(.top, 5.0)
+                    .padding(.top, 5.0)
                 HStack {
                     Text(post.description)
                         .font(.callout)

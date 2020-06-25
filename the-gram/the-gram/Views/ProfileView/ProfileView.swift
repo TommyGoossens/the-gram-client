@@ -17,7 +17,6 @@ struct ProfileView: View {
     @State var Grid: [Int] = []
     
     init(navBarHidden: Bool, userId:String) {
-        print(navBarHidden)
         self.navBarHidden = navBarHidden
         self.userId = userId
         profile = ObservableViewModelHack<UserProfile>(endpoint: "profile/\(userId)")
@@ -41,7 +40,8 @@ struct ProfileView: View {
                 
                 .padding(0.0)
             } else {
-                
+                Text("Loading...")
+                ActivityIndicator(isAnimating: .constant(true), style: .large)
             }
                 
         }.onAppear{
