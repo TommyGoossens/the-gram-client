@@ -9,33 +9,23 @@
 import SwiftUI
 
 struct GramPostCommentsPreview: View {
+    let numberOfComments: Int
     var body: some View {
         VStack {
-            HStack {
-                Text("tommy.goossens")
-                    .font(.callout)
-                    .fontWeight(.medium)
-                    .padding(.leading, 10.0)
-                Text("Look at the view!")
-                    .font(.callout)
-                    .fontWeight(.regular)
-                Spacer()
-            }
-            .padding(.bottom, 5.0)
             HStack{
-                Text("View all 1940 comments")
+                Text("\(numberOfComments) \(numberOfComments == 1 ? "comment" : "comments")")
                     .font(.caption)
                     .fontWeight(.regular)
                     .foregroundColor(Color.gray)
-                    .padding(.leading, 10.0)
+                    
                 Spacer()
             }
-        }
+        }.padding(.leading, 10.0)
     }
 }
 
 struct GramPostCommentsPreview_Previews: PreviewProvider {
     static var previews: some View {
-        GramPostCommentsPreview()
+        GramPostCommentsPreview(numberOfComments: 1)
     }
 }

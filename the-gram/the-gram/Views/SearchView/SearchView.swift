@@ -10,18 +10,16 @@ import SwiftUI
 
 struct SearchView: View {
     private let restService:RestService = RestService()
-    
     @State var searchTerm: String = ""
-    @ObservedObject var searchResults = InfiniteScrollingList<UserSearchResult>(endpoint:"profile/query/" )
-    
+    @ObservedObject var searchResults = InfiniteScrollingList<UserSearchResult>(endpoint:"profile/query")
     var body: some View {
         NavigationView{
-            
             VStack{
                 createSearchBar()
                 if searchResults.count > 0 {
+                    
                     List(searchResults) { (result:UserSearchResult) in
-                        NavigationLink(destination: ProfileView(userId: result.userId)){
+                        NavigationLink(destination: ProfileView(navBarHidden: false, userId: result.userId)){
                             ProfileSearchResult(user: result).onAppear{
                                 self.searchResults.loadMoreResults(currentItem: result)
                             }
@@ -34,8 +32,10 @@ struct SearchView: View {
                     }
                     Spacer()
                 }
-            }.navigationBarTitle("").navigationBarHidden(true)
-            
+            }.navigationBarTitle(Text("")).navigationBarHidden(true).onAppear{
+//                self.searchResults.listItems = []
+//                self.searchTerm = ""
+            }
         }
     }
     
@@ -46,22 +46,11 @@ struct SearchView: View {
             self.searchTerm = searchText
             if searchText.count >= 3
             {
-                self.searchResults.loadInitialResults(requestBody: ["searchTerm":searchText as AnyObject])
+                self.searchResults.loadInitialResults(pathParams: [searchText], keepCurrentData: false)
             }
         }
         return searchBar
     }
-    
-//    private func queryUsers(searchText:String) -> Void {
-//        let body: [String: AnyObject] = [
-//            "searchTerm":searchText as AnyObject,
-//            "pagNumber":1 as AnyObject
-//        ]
-//        self.restService.postRequest(endpoint: "profile/query/",body: body, of: [UserSearchResult].self) { response in
-////            self.searchResults = response
-////            self.pageNumber+=1
-//        }
-//    }
 }
 
 struct SearchView_Previews: PreviewProvider {

@@ -9,19 +9,35 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    private let restService:RestService = RestService()
+    @ObservedObject var feedPosts = InfiniteScrollingList<Post>(endpoint:"feed")
     var body: some View {
-        VStack() {
-            Group {
-                Header(headerText: "The Gram")
-                    .padding(.bottom, 0.0)
-                List {
-                    ForEach(0..<10) { item in
-                        GramPost()
-                            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                    }
+        VStack{
+            if self.feedPosts.count > 0{
+                NavigationView{
+                    ScrollView(.vertical, showsIndicators: false){
+                        VStack(spacing:5){
+                            ForEach(self.feedPosts, id:\.postId){ post in
+                                GramFeedPost(post: post)
+                            }
+                        }
+                        }.navigationBarTitle("").navigationBarHidden(true)
                 }
+                
             }
+            else{
+                Spacer()
+                Text("There are no posts to view.")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                Text("Perhaps you can follow some new users?")
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }.onAppear{
+            self.feedPosts.loadInitialResults(pathParams: [], keepCurrentData: true)
+            
         }
     }
 }

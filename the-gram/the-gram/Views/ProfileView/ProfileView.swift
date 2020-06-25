@@ -9,46 +9,66 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @ObservedObject var profile: ObservableViewModelHack<UserProfile>
+    let navBarHidden: Bool
     let userId: String
-    let rest = RestService()
-    @State var profile:UserProfile? = nil
-    @State var posts:[ProfilePostPreview] = []
+    @State var posts:[Post] = []
     @State var Grid: [Int] = []
+    
+    init(navBarHidden: Bool, userId:String) {
+        print(navBarHidden)
+        self.navBarHidden = navBarHidden
+        self.userId = userId
+        profile = ObservableViewModelHack<UserProfile>(endpoint: "profile/\(userId)")
+    }
     
     var body: some View {
         VStack{
-            ProfileInformationHeader(profile: self.$profile)
-            ProfileViewButtons(user: self.$profile)
-            ProfilePostGrid(data: self.$posts, grid: self.$Grid)
+            if self.profile.count > 0 {
+                VStack{
+                    NavigationView{
+                        VStack{
+                            ProfileInformationHeader(profile: self.profile[0])
+                            ProfileViewButtons(userId: self.profile[0].userId)
+                            ProfilePostGrid(data: self.$posts, grid: self.$Grid)
+                        }.navigationBarTitle(Text(self.profile[0].userName), displayMode: .inline).navigationBarHidden(!self.navBarHidden)
+                    }.onAppear{
+                        self.posts = self.profile[0].posts
+                        self.generateGrid()
+                    }
+                }.navigationBarTitle(Text(self.profile[0].userName), displayMode: .inline).navigationBarHidden(self.navBarHidden)
+                
+                .padding(0.0)
+            } else {
+                
+            }
+                
         }.onAppear{
-                print("Profile page is displayed on \(Date.init())")
-                self.fetchUserProfile()
+            self.profile.fetchList(pathParams: [])
         }
-        .padding(0.0)
-        
-        
     }
     func generateGrid() {
         self.Grid = []
-        for i in stride(from: 0, to: (self.profile?.posts.count)!, by: 3){
-            if i != self.profile?.posts.count{
+        for i in stride(from: 0, to: (self.profile[0].posts.count), by: 3){
+            if i != self.profile[0].posts.count{
                 self.Grid.append(i)
             }
         }
     }
-
-    func fetchUserProfile(){
-        self.rest.getRequest(endpoint: "profile/\(userId)", of: UserProfile.self){data in
-            self.profile = data
-            self.posts = data.posts
-            print("Data is received on \(Date.init())")
-            self.generateGrid()
-        }
-    }
+    
+//    func fetchUserProfile(){
+//        self.rest.getRequest(endpoint: "profile/\(userId)", of: UserProfile.self){data in
+//            self.profile = data
+//            self.posts = data.posts
+//            print("Data is received on \(Date.init())")
+//            self.generateGrid()
+//        }
+//    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(userId: "UBh7cektzYhSu6s4s6IdEEsNfz63")
+        ProfileView(navBarHidden: true, userId: "UBh7cektzYhSu6s4s6IdEEsNfz63")
     }
 }

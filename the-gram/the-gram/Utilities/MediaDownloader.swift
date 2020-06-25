@@ -8,17 +8,22 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 struct MediaDownloader {
     
     
     static func GetImage(mediaURL : String) -> UIImage {
-        if mediaURL == "" {
+        
+//        let image = UIImageView()
+//
+//
+//        guard let url: URL = URL(string: mediaURL) else {
+            
             return UIImage(named: "appicon")!
-        }
-        let url: URL = URL(string: mediaURL)!
-        guard let imageData = try? Data(contentsOf: url) else{
-            return UIImage(named: "appicon")!
-        }
-        return UIImage(data: imageData)!
+//        }
+//        image.pin_updateWithProgress = true
+//        image.pin_setImage(from: url)
+//
+//        return image
     }
 }

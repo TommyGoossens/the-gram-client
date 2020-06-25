@@ -8,21 +8,22 @@
 
 import Foundation
 
-protocol InfiniteScrollingListValue :Identifiable, Decodable, Equatable {
+protocol ObvservableListItem :Identifiable, Decodable, Equatable {
 }
 
-class InfiniteScrollingList<T:InfiniteScrollingListValue> : ObservableObject, RandomAccessCollection{
+class InfiniteScrollingList<T:ObvservableListItem> : ObservableObject, RandomAccessCollection{
     
     typealias Element = T
     @Published var listItems = [T]()
     
-    private var restService = RestService()
+    private let restService = RestService()
     private let endpoint:String
     
     var startIndex: Int { listItems.startIndex}
     var endIndex: Int { listItems.endIndex}
     
-    var body: [String: AnyObject] = [:]
+    var pageNumber = 1
+    var params:[String] = []
     var currentlyLoading:Bool = false
     
     subscript(position: Int) -> Element {
@@ -31,19 +32,17 @@ class InfiniteScrollingList<T:InfiniteScrollingListValue> : ObservableObject, Ra
     
     init(endpoint:String) {
         self.endpoint = endpoint
-        self.body.updateValue(1 as AnyObject, forKey: "pageNumber")
     }
     
-    func loadInitialResults(requestBody: [String:AnyObject]){
-        self.body["pageNumber"] = 1 as AnyObject
-              requestBody.forEach { (key,value) in
-                  self.body[key] = value
-              }
-        DispatchQueue.main.async {
-            self.listItems.removeAll()
-        }
+    func loadInitialResults(pathParams: [String], keepCurrentData:Bool){
+        self.pageNumber = 1
+        self.params = pathParams
         
-        loadMoreResults()
+            DispatchQueue.main.async {
+                self.listItems.removeAll()
+            }
+        
+            loadMoreResults()
     }
     
     func shouldLoadMoreData(currentItem: T? = nil) -> Bool{
@@ -62,18 +61,22 @@ class InfiniteScrollingList<T:InfiniteScrollingListValue> : ObservableObject, Ra
         return currentItem.id == lastItem.id
     }
     
+    
     func loadMoreResults(currentItem: T? = nil){
         
         if !shouldLoadMoreData(currentItem: currentItem) {
             return
         }
         currentlyLoading = true
-        
-        self.restService.postRequest(endpoint: self.endpoint,body: body, of: [Element].self) { response in
+        var urlParams = "\(self.pageNumber)"
+        for i in stride(from: 0, to: self.params.count, by: 1){
+            urlParams += "/\(self.params[i])"
+        }
+        print("\(self.endpoint)/\(urlParams)")
+        self.restService.getRequest(endpoint: "\(self.endpoint)/\(urlParams)", of: [Element].self) { response in
             DispatchQueue.main.async {
                 self.listItems.append(contentsOf: response)
-                let currentPage = self.body["pageNumber"] as! Int
-                self.body["pageNumber"] = currentPage + 1 as AnyObject
+                self.pageNumber +=  1
                 self.currentlyLoading = false
             }
         }
