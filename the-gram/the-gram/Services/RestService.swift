@@ -36,7 +36,6 @@ class RestService {
                         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                         decoder.dateDecodingStrategy = .formatted(dateFormatter)
                         let parsed = try decoder.decode(T.self, from: data)
-                        print(parsed)
                         dataReceived(parsed)
                     }catch let error{
                         print(error)

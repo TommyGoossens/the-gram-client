@@ -26,6 +26,13 @@ struct PostDetailView: View {
                 .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
             GramPostButtons(postId: post.postId, likedPic: post.postLikedByAuthUser, datePosted: post.datePosted)
             GramPostLikes(numberOfLikes: post.likes)
+            HStack {
+                 Text(post.description)
+                     .font(.callout)
+                     .fontWeight(.regular)
+                 Spacer()
+             }
+             .padding(.bottom, 5.0)
             GramPostCommentsPreview(numberOfComments: post.comments)
             if self.comments.count > 0 {
                 ScrollView(.vertical, showsIndicators: false){

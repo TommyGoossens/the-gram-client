@@ -31,6 +31,10 @@ class ObservableList<T:ObvservableListItem>: ObservableObject, RandomAccessColle
             return
         }
         
+        DispatchQueue.main.async {
+            self.listItems.removeAll()
+        }
+        
         var urlParams: String = ""
         for i in stride(from: 0, to: pathParams.count, by: 1){
             urlParams += "/\(pathParams[i])"

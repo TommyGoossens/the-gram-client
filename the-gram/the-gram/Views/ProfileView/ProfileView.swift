@@ -17,7 +17,7 @@ struct ProfileView: View {
     @State var Grid: [Int] = []
     
     init(navBarHidden: Bool, userId:String) {
-        print(navBarHidden)
+
         self.navBarHidden = navBarHidden
         self.userId = userId
         profile = ObservableViewModelHack<UserProfile>(endpoint: "profile/\(userId)")
@@ -41,7 +41,8 @@ struct ProfileView: View {
                 
                 .padding(0.0)
             } else {
-                
+                Text("Loading...")
+                RestActivityIndicator(isAnimating: .constant(true), style: .large)
             }
                 
         }.onAppear{
@@ -56,15 +57,6 @@ struct ProfileView: View {
             }
         }
     }
-    
-//    func fetchUserProfile(){
-//        self.rest.getRequest(endpoint: "profile/\(userId)", of: UserProfile.self){data in
-//            self.profile = data
-//            self.posts = data.posts
-//            print("Data is received on \(Date.init())")
-//            self.generateGrid()
-//        }
-//    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
