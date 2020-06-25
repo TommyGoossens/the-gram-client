@@ -11,7 +11,6 @@ import SwiftUI
 struct ProfileInformationHeader: View {
     var profile:UserProfile
     var body: some View {
-        VStack {
             HStack {
                 CircularProfilePicture(imageUrl:profile.profilePictureURL, height: 100)
                 VStack(alignment: .leading){
@@ -43,11 +42,9 @@ struct ProfileInformationHeader: View {
                         
                     }
                 }
-                Spacer()
-            }
-        }
+            }.padding(.horizontal, 10.0)
             
-        .padding(.horizontal, 10.0)
+        
     }
 }
 

@@ -15,6 +15,7 @@ struct GramPostHeader: View {
             CircularProfilePicture(imageUrl:profile.profilePictureURL, height: 50.0)
             Text(profile.userName)
                 .font(.body)
+                .foregroundColor(Color.black)
             Spacer()
         }
         .padding(.leading, 5.0)
